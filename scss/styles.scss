@@ -1,0 +1,69 @@
+@import 'normalize';
+@import 'variables';
+@import 'typography';
+
+body {
+  background-color: $navy;
+  font: {
+    family: $font-roboto;
+    weight: 300;
+    size: 1rem;
+  }
+  color: $text-black;
+}
+p {
+  margin: 0;
+}
+#main-container {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3rem;
+}
+.video-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  video {
+    width: 100%;
+  }
+  .play-pause {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    a {
+      .icon-svg {
+        width: 26px;
+        height: 26px;
+
+        .yellow-- {
+          color: $yellow;
+          transition: all 0.2s linear;
+          &:hover {
+            color: $white;
+          }
+        }
+        .navy-- {
+          color: $navy;
+        }
+        .blue-- {
+          color: $blue;
+        }
+        .white-- {
+          color: $white;
+          transition: all 0.2s linear;
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}
+.no-display {
+  display: none !important;
+}
