@@ -33,7 +33,7 @@
 <body>
   <div class="main">
     <video controls width="960" poster="./images/video_poster.jpg">
-      <source src="./video/cum_through_my_window_big-1080.mp4" type="video/mp4">
+      <source src="./video/arity-platform-hero.mp4" type="video/mp4">
       Sorry your browser doesn’t support the video codecs available.
     </video>
   </div>
