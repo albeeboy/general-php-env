@@ -54,9 +54,13 @@
   </style>
 </head>
 <body>
+    <?php
+      $smileys = array('😃', '😊', '🙂', '🙃', '🤓', '😎', '😶', '🤡', '🤠', '😸');
+      $random_smiley_index = rand(0, (count($smileys) - 1));
+    ?>
   <section class="main">
-    <h1><span class="bigly">😃</span></h1>
-    <h2>Page index</h2>
+    <h1><span class="bigly"><?=$smileys[$random_smiley_index];?></span></h1>
+    <h2>Experiments</h2>
     <ul class="page-index-list">
       <li><a href="./camel-case.php">Title- to camel-case</a></li>
       <li><a href="./countries.php">Official Pardot select input options of all countries</a></li>
