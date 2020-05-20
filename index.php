@@ -67,7 +67,8 @@
       <li><a href="./custom-video-controls.php">Custom video controls (also, fun with sprites)</a></li>
       <li><a href="./info.php">PHP info (it&rsquo;s handy, alright?)</a></li>
       <li><a href="./search-selector.php">Search selector</a></li>
-      <li><a href="./urlencode">URL encode stuff</a></li>
+      <li><a href="./urlencode.php">URL encode stuff</a></li>
+      <li><a href="./phone-numbers.php">Phone numbers to just numbers</a></li>
     </ul>
   </section>
 </body>
