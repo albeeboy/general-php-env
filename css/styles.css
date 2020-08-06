@@ -345,6 +345,13 @@ body {
   color: #222;
 }
 
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #011c2c;
+  margin: 0 0 1rem 0;
+}
+
 p {
   margin: 0;
 }
@@ -354,6 +361,14 @@ p {
   box-sizing: border-box;
   width: 100%;
   padding: 3rem;
+}
+#main-container.form-stuff-page {
+  position: relative;
+  width: 80%;
+  max-width: 960px;
+  margin: 1.5rem auto;
+  background-color: #fff;
+  border-radius: 0.5rem;
 }
 
 .video-container {
@@ -400,6 +415,81 @@ p {
 
 .no-display {
   display: none !important;
+}
+
+#experimental-form .form-group {
+  width: 37.5rem;
+  margin: 0 0 1.25rem;
+}
+#experimental-form .form-group-label {
+  display: inline-block;
+  width: auto;
+  margin: 0 0 6px;
+}
+#experimental-form .form-group-label--checkbox {
+  font-weight: 400;
+}
+#experimental-form .form-group .form-control {
+  width: 100%;
+  padding: 6px 8px;
+}
+#experimental-form .form-group .form-control.custom-select {
+  display: block;
+  width: 75%;
+  height: 2.2rem;
+}
+#experimental-form .form-group .form-control[type=checkbox] {
+  width: auto;
+  display: inline-flex;
+  padding: 0;
+  margin: 0 8px 0 0;
+}
+#experimental-form .form-group .checkbox-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  margin: 0 0 3px 0;
+}
+
+label, .checkbox-group-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #011c2c;
+}
+
+.checkbox-group-title {
+  margin: 0 0 6px;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+button.button {
+  padding: 8px 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #011c2c;
+  border: 2px solid #011c2c;
+  background-color: #fff;
+  border-radius: 8px;
+  transition: all 0.2s linear;
+}
+button.button:hover {
+  color: #fff;
+  background-color: #011c2c;
+}
+button.button--blue {
+  color: #fff;
+  background-color: #007aed;
+  border: 2px solid #007aed;
+  transition: all 0.2s linear;
+}
+button.button--blue:hover {
+  color: #007aed;
+  background-color: #fff;
 }
 
 /*# sourceMappingURL=styles.css.map */
