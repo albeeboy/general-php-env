@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="page-template-default page page-id-29">
+  <!--<![endif]-->
+  <head>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T9KSPB"></script>
+    <script>
+      (function(){function xIDhP() {
+      //<![CDATA[
+      window.XikeTTt = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+      window.KxxsRla = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+      let WAIT_TIME = 100;
+
+    
+      if (!['http:', 'https:'].includes(window.location.protocol)) {
+      // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+        window.OBIVq = true;
+        window.sYYgV = 38.883333;
+        window.eSers = -77.000;
+      }
+
+      function waitGetCurrentPosition() {
+        if ((typeof window.OBIVq !== 'undefined')) {
+          if (window.OBIVq === true) {
+            window.fgkUZLO({
+              coords: {
+                latitude: window.sYYgV,
+                longitude: window.eSers,
+                accuracy: 10,
+                altitude: null,
+                altitudeAccuracy: null,
+                heading: null,
+                speed: null,
+              },
+              timestamp: new Date().getTime(),
+            });
+          } else {
+            window.XikeTTt(window.fgkUZLO, window.SMErDBc, window.EDlTU);
+          }
+        } else {
+          setTimeout(waitGetCurrentPosition, WAIT_TIME);
+        }
+      }
+
+      function waitWatchPosition() {
+        if ((typeof window.OBIVq !== 'undefined')) {
+          if (window.OBIVq === true) {
+            navigator.getCurrentPosition(window.wTXdaoL, window.gcPlVbe, window.mrNop);
+            return Math.floor(Math.random() * 10000); // random id
+          } else {
+            window.KxxsRla(window.wTXdaoL, window.gcPlVbe, window.mrNop);
+          }
+        } else {
+          setTimeout(waitWatchPosition, WAIT_TIME);
+        }
+      }
+
+      navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+        window.fgkUZLO = successCallback;
+        window.SMErDBc = errorCallback;
+        window.EDlTU = options;
+        waitGetCurrentPosition();
+      };
+      navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+        window.wTXdaoL = successCallback;
+        window.gcPlVbe = errorCallback;
+        window.mrNop = options;
+        waitWatchPosition();
+      };
+
+      const instantiate = (constructor, args) => {
+        const bind = Function.bind;
+        const unbind = bind.bind(bind);
+        return new (unbind(constructor, null).apply(null, args));
+      }
+
+      Blob = function (_Blob) {
+        function secureBlob(...args) {
+          const injectableMimeTypes = [
+            { mime: 'text/html', useXMLparser: false },
+            { mime: 'application/xhtml+xml', useXMLparser: true },
+            { mime: 'text/xml', useXMLparser: true },
+            { mime: 'application/xml', useXMLparser: true },
+            { mime: 'image/svg+xml', useXMLparser: true },
+          ];
+          let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+          if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+            const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+            if (mimeTypeIndex >= 0) {
+              let mimeType = injectableMimeTypes[mimeTypeIndex];
+              let injectedCode = `<script>(
+                ${xIDhP}
+              )();<\/script>`;
+        
+              let parser = new DOMParser();
+              let xmlDoc;
+              if (mimeType.useXMLparser === true) {
+                xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+              } else {
+                xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+              }
+
+              if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+                xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+        
+                if (mimeType.useXMLparser === true) {
+                  args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+                } else {
+                  args[0][0] = xmlDoc.documentElement.outerHTML;
+                }
+              }
+            }
+          }
+
+          return instantiate(_Blob, args); // arguments?
+        }
+
+        // Copy props and methods
+        let propNames = Object.getOwnPropertyNames(_Blob);
+        for (let i = 0; i < propNames.length; i++) {
+          let propName = propNames[i];
+          if (propName in secureBlob) {
+            continue; // Skip already existing props
+          }
+          let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+          Object.defineProperty(secureBlob, propName, desc);
+        }
+
+        secureBlob.prototype = _Blob.prototype;
+        return secureBlob;
+      }(Blob);
+
+      Object.freeze(navigator.geolocation);
+
+      window.addEventListener('message', function (event) {
+        if (event.source !== window) {
+          return;
+        }
+        const message = event.data;
+        switch (message.method) {
+          case 'ucIIWNa':
+            if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+              window.sYYgV = message.info.coords.lat;
+              window.eSers = message.info.coords.lon;
+              window.OBIVq = message.info.fakeIt;
+            }
+            break;
+          default:
+            break;
+        }
+      }, false);
+      //]]>
+      }xIDhP();})()
+    </script>
+
+    <base href="https://www.vsapartners.com">
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<title>Connect Portal - Connect</title>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="https://static.vsapartners.com/assets/icons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://static.vsapartners.com/assets/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://static.vsapartners.com/assets/icons/favicon-16x16.png">
+		<link rel="manifest" href="https://static.vsapartners.com/assets/icons/site.webmanifest">
+		<link rel="mask-icon" href="https://static.vsapartners.com/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="https://static.vsapartners.com/assets/icons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#161616">
+		<meta name="msapplication-config" content="https://static.vsapartners.com/assets/icons/browserconfig.xml">
+		<meta name="theme-color" content="#161616">
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="https://www.vsapartners.com/xmlrpc.php">
+		<link href="//cloud.webtype.com/css/22c091e9-7d43-4917-b6ae-f5a8cbddf0d8.css" rel="stylesheet" type="text/css">
+		<link rel="dns-prefetch" href="//maps.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+
+    <link rel="stylesheet" id="style-css" href="/wp-content/themes/vsa/css/style.css?ver=2.0.0" type="text/css" media="screen">
+    <script type="text/javascript" src="/wp-content/themes/vsa/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/wp-content/themes/vsa/js/work-tabs.js?ver=2.0.0"></script>
+    <link rel="https://api.w.org/" href="https://www.vsapartners.com/wp-json/">
+    <link rel="canonical" href="https://www.vsapartners.com/terms-privacy/">
+    <link rel="shortlink" href="https://www.vsapartners.com/?p=29">
+    <link rel="alternate" type="application/rss+xml" title="VSA Partners » News Feed" href="https://www.vsapartners.com/news/feed/">
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script language="javascript" type="text/javascript" src="/wp-content/themes/vsa/js/css3-mediaqueries.js"></script>
+    <![endif]-->
+	
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-T9KSPB');</script>
+		<!-- End Google Tag Manager -->
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-456117-1"></script>
+		<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-456117-1', { 'send_page_view': false });
+		</script>
+		<!-- End Global site tag (gtag.js) - Google Analytics -->
+	
+    <!-- END ICIMS PREHEADER -->
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/42/1/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/42/1/util.js"></script>
+  </head>
+
+
+  <body class=" ">
+
+    <!-- Google Tag Manager (noscript) -->
+    <a id="icims_skipLink1" style="left: -9999px; position: absolute; top: -1px;" href="https://careers-vsapartners.icims.com/connect?mobile=false&amp;width=1120&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240#icims_content_iframe">Skip Branding</a><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9KSPB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- SITE CONTAINER -->
+    <div id="site" class="">
+
+      <div id="mainnav" data-script="MobileMenu">
+        <div class="content">
+
+          <style>
+            .vsa-logo-container {
+              position: relative;
+              width: 39px;
+              height: 43px;
+              margin: 0 auto;
+              padding: 16px 0 24px;
+            }
+            .vsa-logo-container svg g {
+              stroke: #000;
+            }
+          </style>
+          <div class="vsa-logo-container">
+            <svg viewBox="0 0 39 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke-width="1.3">
+              <title>VSA Logo White</title>
+              <g id="Symbols" stroke="none" fill="none" fill-rule="evenodd">
+                <g id="nav/global-header/xlarge/dark" transform="translate(-701.000000, -29.000000)">
+                  <g id="nav/global-header/xlarge">
+                    <g id="vsa" transform="translate(702.000000, 30.000000)">
+                      <path d="M25.5259053,8.85109067 L23.752372,13.2654373" id="Stroke-1"></path>
+                      <polyline id="Stroke-2" points="26.4268307 19.079568 34.2200173 0.154314667 29.0163373 0.154314667 27.3587373 4.285488"></polyline>
+                      <path d="M19.195452,36.6358213 L22.1401587,29.4874213" id="Stroke-4"></path>
+                      <path d="M14.4076027,29.4116453 L17.4514693,36.7790853" id="Stroke-5"></path>
+                      <polyline id="Stroke-6" points="17.5559573 25.0289707 7.52599733 0.154117333 2.321824 0.154117333 12.6014107 25.0403173"></polyline>
+                      <path d="M20.209104,22.095956 L19.0241173,25.045596" id="Stroke-8"></path>
+                      <g id="Group-13" transform="translate(0.000000, 0.106511)">
+                        <path d="M12.494012,24.4469853 L12.255732,24.989652 L24.3285853,24.989652 M21.1396787,17.813132 L18.2694653,11.3549053 L16.377532,15.644932 M12.835892,12.9952387 L18.2640387,1.238612 L28.1928653,22.732652 M29.6639853,25.917612 L36.5149053,40.7496787 L31.395092,40.7496787 L28.5362253,34.3437453 M25.568332,29.3487453 L10.2789453,29.3487453 L5.144332,40.7496787 L0.0255053333,40.7496787 L10.115652,18.887612" id="Stroke-9"></path>
+                        <path d="M9.27964933,4.39688267 C11.2954093,1.69588267 14.7235827,0.125109333 18.4230893,0.125109333 C23.4763027,0.125109333 26.8936227,2.75654933 28.9789427,6.61540267 L25.486636,8.856616 C24.1403293,6.52512267 22.5409427,4.754056 19.7698893,4.304136 M16.8903027,4.33422933 C14.0398227,4.91192267 11.801076,7.19654933 11.801076,10.2912293 C11.801076,10.3968027 11.8045293,10.5004027 11.811436,10.6010427 M12.8247427,13.1520693 C14.0605427,14.693736 16.189276,15.6493227 17.953436,16.4435893 L20.559716,17.5910827 C25.6696627,19.832296 29.9966893,22.3877627 29.9966893,28.6452027 C29.9966893,35.5272027 24.4703693,40.7925493 17.6391827,40.7925493 C13.236676,40.7925493 9.61856933,38.8098427 7.411396,35.5370693 M9.83168933,30.307736 C10.7009427,33.9120293 13.627396,36.726496 17.5370627,36.726496 C21.759996,36.726496 25.6173693,33.492696 25.6173693,29.061576 C25.6173693,24.4730827 22.0199827,22.9097093 18.3703027,21.2407627 L15.9712227,20.1973627 C15.826676,20.132736 15.6806493,20.066136 15.538076,19.9990427" id="Stroke-11"></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+        
+
+          <!--
+          <div class="vsa"><a href="https://www.vsapartners.com" class="navbar-brand">VSA Partners</a></div>
+
+          <a id="nav_toggle" href="#">&nbsp;</a>
+          <ul class="nav">
+            <li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"><a href="https://www.vsapartners.com/about/"><span></span>About</a></li>
+            <li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="https://www.vsapartners.com/work/"><span></span>Work</a></li>
+            <li id="menu-item-343" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-343"><a href="/news/"><span></span>News</a></li>
+            <li id="menu-item-10790" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10790"><a href="/ideas/"><span></span>Ideas</a></li>
+            <li id="menu-item-10350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10350"><a href="https://www.vsapartners.com/careers/"><span></span>Careers</a></li>
+            <li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a href="https://www.vsapartners.com/contact/"><span></span>Contact</a></li>
+          </ul>
+          -->
+
+        </div>
+      </div>
+
+      <div id="general" class="text terms-privacy">
+        <!-- 
+        <section class="top">
+          <div class="description">
+            <p>Welcome to the website of VSA Partners, Inc. (“VSA,” “we,” or “us”). This page details the terms under which you agree to use our website www.vsapartners.com. VSA also has established a Privacy Policy to explain how we collect and use information about you from the site. A copy of this Privacy Policy is incorporated into these terms of use by reference (collectively, the “terms”). By visiting or using this site, you are agreeing to comply with and be bound by the terms. IF YOU DO NOT AGREE TO THESE TERMS, YOU SHOULD NOT ACCESS OR USE THIS SITE.</p>
+            <p>We reserve the right to revise and update these terms at any time without notice. This site is for informational purposes only. Neither the site nor its contents are an offer to sell or a solicitation of an offer to buy any goods or services and do not create a client, advisory, business, fiduciary or professional relationship between you and VSA.</p>
+          </div>
+        </section>
+        -->
+      
+        <div style="width: 100%; max-width: 1120px; margin: 0 auto; padding: 20px 25px;">	
+          <!-- BEGIN ICIMS -->
+          <script type="text/javascript" src="https://cdn07.icims.com/a/images.icims.com/content/platform_112.2.0.200728-84e38dc-1/script/lib/domreplacement/domReplacement.js"></script>
+          <script type="text/javascript" src="https://cdn07.icims.com/a/images.icims.com/content/platform_112.2.0.200728-84e38dc-1/script/common/icims.js"></script>
+          <script type="text/javascript" src="https://cdn07.icims.com/a/images.icims.com/content/platform_112.2.0.200728-84e38dc-1/script/portal/utils.js"></script>
+          <script type="text/javascript">var useAutoScrolling = false;</script>
+          <!--[if lte IE 8]>
+          <script type="text/javascript">useAutoScrolling = true;</script>
+          <![endif]-->
+          <script type="text/javascript">
+
+            if (window.addEventListener) {
+            window.addEventListener('message', icims_handlePostMessage, false);
+            } else if (window.attachEvent) {
+            window.attachEvent('onmessage', icims_handlePostMessage);
+            }
+            function icims_handlePostMessage(event) {
+            // If this is not a message from an icims domain, ignore it.
+            if (event.origin.indexOf('icims.com') == -1) return;
+            var data = event.data;
+            if (typeof data === "string") {
+            try {
+            data = ICIMS.jsonDecode(data);
+            } catch(e) {
+            data = event.data;
+            }
+            }
+            try {
+            if (data && data.height && !isNaN(data.height)) {
+            document.getElementById('icims_content_iframe').height = parseInt(data.height);
+            } else if ((data && 'x' in data && 'y' in data && !isNaN(parseInt(data.x)) && !isNaN(parseInt(data.y)))) {
+            top.scrollTo(parseInt(data.x), parseInt(data.y));
+            } else if(data && data.pageTitle){
+            window.document.title = data.pageTitle;
+            }
+            } catch (e) {}
+            }
+            function getCookie(name) {
+            var match = document.cookie.match(name + '=(.*?)(;|$)');
+            if (match) return unescape(match[1]);
+            else return "";
+            }
+            function updateUrl(url) {
+            try {
+            history.replaceState({}, '', url);
+            } catch (e) {}
+            }
+            icimsAddOnload(function() {
+            var icimsFrame = document.createElement('iframe');
+            var iFrameHeight = 500;
+            icimsFrame.id = 'icims_content_iframe';
+            icimsFrame.name = 'icims_content_iframe';
+            icimsFrame.src = 'https:\/\/careers-vsapartners.icims.com\/connect?in_iframe=1';
+            icimsFrame.setAttribute('style', 'width: 100%;border: none;margin: 0px');
+
+
+            iFrameHeight = 500;
+
+            icimsFrame.setAttribute('height', iFrameHeight);
+            icimsFrame.setAttribute('title', 'iCIMS Content iFrame');
+            icimsFrame.onload=function() {
+            try {
+            window.parent.parent.scrollTo(0,0);
+            } catch (e) {}
+            };
+            document.getElementById('icims_iframe_span').appendChild(icimsFrame);
+            try {
+            var height = getCookie('cookie_icims_iframe_content_height');
+            if (height > 0 && typeof style !== 'undefined') style.height = height + 'px';
+            } catch(e) {}
+            document.getElementById('icims_content_iframe').onreadystatechange = function() {
+            try{
+            if ('interactive' == this.readyState) {
+            window.scroll(1,1);
+            }
+            } catch(e) {}
+            };
+            try {
+            var height = 0;
+            if (navigator.userAgent.indexOf("Firefox")!=-1) height = document.body.offsetHeight + 16;
+            else height = document.body.scrollHeight;
+            document.cookie="cookie_icims_iframe_content_height="+height+"; path=/;";
+            } catch(e) {}
+            });
+          </script>
+          <noscript>
+          <iframe src="https://careers-vsapartners.icims.com/connect?in_iframe=1" id="noscript_icims_content_iframe" name="noscript_icims_content_iframe" title="Noscript iCIMS Content iFrame" width="100%" height="500">Your browser does not support inline frames or is currently configured not to display inline frames. Content can be viewed at the actual source page: _IFRAME_SRC_</iframe>
+          </noscript>
+          <span id="icims_iframe_span" role="main" aria-label="Career Portal">
+          <iframe id="icims_content_iframe" name="icims_content_iframe" src="https://careers-vsapartners.icims.com/connect?in_iframe=1" style="width: 100%;border: none;margin: 0px" height="607" title="iCIMS Content iFrame"></iframe></span>
+
+          <!-- END ICIMS -->
+
+        </div>
+
+      </div>
+    </div>
+    <footer>
+      <div class="top">
+        <div class="inner">
+          <div class="name"><a href="https://www.vsapartners.com/"><img src="https://static.vsapartners.com/images/logo/logo-white.svg" width="61" height="67" alt="VSA Partners"></a></div>
+          <p><a href="mailto:info@vsapartners.com" class="ext">info@vsapartners.com</a></p>
+          <p><a href="tel:8774221311" data-script="tel">877-422-1311</a></p>
+          <hr>
+          <a class="city" href="https://www.vsapartners.com/contact/#chicago">Chicago</a>
+          <hr>
+          <a class="city" href="https://www.vsapartners.com/contact/#new-york">New York</a>
+          <hr>
+          <a class="city" href="https://www.vsapartners.com/contact/#san-francisco">San Francisco</a>
+          <hr>
+          <span>a member of</span> <a href="https://thenetworkone.com/" target="_blank">the<b>network</b>one</a>
+          <hr class="bottom">
+
+          <div class="social" data-script="GoogleEvents">
+            <a target="_blank" class="insta" href="https://www.instagram.com/vsapartners/">Instagram</a>
+            <a target="_blank" class="facebook" href="https://www.facebook.com/vsapartners">Facebook</a>
+            <a target="_blank" class="twitter" href="https://twitter.com/vsapartners">Twitter</a>
+            <a target="_blank" class="linkedin" href="https://www.linkedin.com/company/vsa-partners">LinkedIn</a>
+            <!--<a target="_blank" class="vimeo" href="https://vimeo.com/vsapartners">Vimeo</a>-->
+          </div>
+          <div class="terms_copyright">
+            <a href="https://www.vsapartners.com/sustainability/">Environmental &amp; Social Sustainability</a> | 
+            <a href="https://www.vsapartners.com/terms-privacy/">Terms &amp; Privacy</a> | 
+            <span class="nobr">© 2019 VSA Partners, Inc.</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="/wp-content/themes/vsa/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="/wp-content/themes/vsa/js/froogaloop2.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy-zh_n_nyGG1__Gp8ffwnDDscGs8kdNQ"></script>
+    <script type="text/javascript" src="/wp-content/themes/vsa/js/functions.js?ver=2.0.0"></script>
+    
+    <script type="text/javascript" id="gtm-vimeo-tracking">(function(g,d,k){function m(){var a=n(r("iframe"),t);a.length&&u(function(){h(a,v)})}function t(a){return-1<a.src.indexOf("player.vimeo.com/video/")}function u(a){l(d.Vimeo)?w("https://player.vimeo.com/api/player.js",a):a()}function v(a){if(!a.__vimeoTracked){a.__vimeoTracked=!0;var c=new Vimeo.Player(a),b=k._track.percentages,e={Play:"play",Pause:"pause","Watch to End":"ended"},f={};c.getVideoTitle().then(function(a){h(["Play","Pause","Watch to End"],function(b){if(k.events[b])c.on(e[b],function(){p(b,
+    a)})});if(b)c.on("timeupdate",function(e){e=e.percent;for(var c in b)e>=b[c]&&!f[c]&&(f[c]=!0,p(c,a))})})}}function x(a){a=y({},{events:{Play:!0,Pause:!0,"Watch to End":!0},percentages:{each:[],every:[]}},a);h(["each","every"],function(b){var c=a.percentages[b];q(c)||(c=[c]);c&&(a.percentages[b]=z(c,Number))});var c=[].concat(a.percentages.each);a.percentages.every&&h(a.percentages.every,function(a){var b=100/a,e=[],d;for(d=1;d<b;d++)e.push(a*d);c=c.concat(n(e,function(a){return 0<a&&100>a}))});var b=
+    A(c,function(a,b){a[b+"%"]=b/100;return a},{});a._track={percentages:b};return a}function B(a){a=a||{};var c=a.name||"dataLayer",b=a.name||d.GoogleAnalyticsObject||"ga",e="_gaq",f={gtm:function(a,b){g.push({event:"vimeoTrack",attributes:{videoAction:a,videoName:b}})},cl:function(a,b){d[e].push(["_trackEvent","Videos",a,b])},ua:function(a,c){d[b]("send","event","Videos",a,c)}};switch(a.type){case "gtm":var g=d[c]=d[c]||[];break;case "ua":d[b]=d[b]||function(){(d[b].q=d[b].q||[]).push(arguments)};d[b].l=
+    +new Date;break;case "cl":d[e]=d[e]||[];break;default:l(d[c])?b&&!l(d[b])?a.type="ua":l(d[e])||l(d[e].push)||(a.type="cl"):(a.type="gtm",g=d[c]=d[c]||[])}return f[a.type]}function y(){var a=[].slice.call(arguments),c=a.shift(),b,e;for(e=0;e<a.length;e++){var d=a[e];for(b in d)c[b]=d[b]}return c}function q(a){return Array.isArray_?Array.isArray_(a):"[object Array]"===Object.prototype.toString.call(a)}function h(a,c){if(Array.prototype.forEach_)return a.forEach.call(a,c);var b;for(b=0;b<a.length;b++)c.call(d,
+    a[b],b,a)}function z(a,c){if(Array.prototype.map_)return a.map.call(a,c);var b=[];h(a,function(a,f,g){b.push(c.call(d,a,f,g))});return b}function n(a,c){if(Array.prototype.filter)return a.filter.call(a,c);var b=[];h(a,function(a,f,g){c.call(d,a,f,g)&&b.push(a)});return b}function A(a,c,b){if(Array.prototype.reduce)return a.reduce.call(a,c,b);var e;for(e=0;e<a.length;e++){var f=a[e];b=c.call(d,b,f,a,e)}return b}function l(a){return"undefined"===typeof a}function r(a){q(a)||(a=[a]);return[].slice.call(g.querySelectorAll(a.join()))}
+    function w(a,c){function b(){c&&(c(),f.onload=null)}var d=g.getElementsByTagName("script")[0];var f=g.createElement("script");f.onload=b;f.src=a;f.async=!0;d.parentNode.insertBefore(f,d)}if(!navigator.userAgent.match(/MSIE [678]\./gi)){k=x(k);var p=B(k.syntax);"loading"!==g.readyState?m():g.addEventListener("DOMContentLoaded",m);g.addEventListener("load",m,!0)}})(document,window,{events:{Play:!0,Pause:!0,"Watch to End":!0},percentages:{every:25,each:[10,90]}});</script>
+  </body>
+</html>

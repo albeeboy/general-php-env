@@ -14,7 +14,9 @@
 </head>
 <body>
   <div id="site">
-    <div id="mainnav">&check; &squ;</div>
+    <div id="mainnav">
+      <?php include 'vsa_logo_white_svg.php'; ?>
+    </div>
     <div id="general" class="text terms-privacy">
       <div style="width: 100%; max-width: 1120px; margin: 0 auto; padding: 20px 25px;">
         <!-- BEGIN ICIMS -->

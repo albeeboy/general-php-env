@@ -72,7 +72,7 @@
       <li><a href="./dates-times.php">Date and time experiments</a></li>
       <li><a href="./regex-stuff.php">Regular expression experiments</a></li>
       <li><a href="./sappi/sappi_07242020.html">Sappi email responder 1</a></li>
-      <li><a href="./vsa-icims-page">VSA ICIMS page</a></li>
+      <li><a href="./vsa-icims-page">VSA iCIMS page</a></li>
     </ul>
   </section>
 </body>

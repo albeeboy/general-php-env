@@ -4,4 +4,27 @@ body {
   font: {
     family: "Helvetica Neue", sans-serif;
   }
+  padding: (24px + 24px + 43px) 0 0 0;
+}
+
+
+#mainnav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 6px 4px rgba(0,0,0,0.05);
+}
+
+.vsa-logo-container {
+  position: relative;
+  width: 39px;
+  height: 43px;
+  margin: 0 auto;
+  padding: 24px;
+  svg g {
+    stroke: #333;
+  }
 }
