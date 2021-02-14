@@ -75,6 +75,7 @@
       <li><a href="./vsa-icims-page">VSA iCIMS page</a></li>
       <li><a href="./6769saintnicholas">67-69 Saint Nicholas experiments</a></li>
       <li><a href="./cme">CME video embed link experiments</a></li>
+      <li><a href="./css-animations">CSS animation experiments</a></li>
     </ul>
   </section>
 </body>
