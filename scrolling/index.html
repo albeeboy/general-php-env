@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun With Scrolling</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="main-container">
+    <section id="tall-section-1">
+      <h2>This is tall section 1</h2>
+      <p id="init-data"></p>
+    </section>
+
+    <section id="tall-section-2">
+      <h2>This is tall section 2</h2>
+    </section>
+
+    <section id="scroll-tracking-1" class="track-scroll not-visible">
+      <h2>Scroll tracking 1</h2>
+      <p id="console-1"></p>
+    </section>
+
+    <section id="scroll-tracking-2" class="track-scroll not-visible">
+      <h2>Scroll tracking 2</h2>
+      <p id="console-2"></p>
+    </section>
+
+    <section id="scroll-tracking-3" class="track-scroll not-visible">
+      <h2>Scroll tracking 3</h2>
+      <p id="console-2"></p>
+    </section>
+
+    <section id="tall-section-3">
+      <h2>This is tall section 3</h2>
+    </section>
+
+  </div>
+</body>
+<script>
+  const scroll1 = document.getElementById("scroll-tracking-1");
+  const console1 = document.getElementById("console-1");
+  const scroll2 = document.getElementById("scroll-tracking-2");
+  const console2 = document.getElementById("console-2");
+  const scroll3 = document.getElementById("scroll-tracking-3");
+  const console3 = document.getElementById("console-3");
+  const initDataEl = document.getElementById("init-data");
+
+  (() => {
+    // console.log("[arrow function]: immediately invoked function expression");
+    let tracked, winH;
+
+    const init = () => {
+      tracked = document.querySelectorAll(".track-scroll");
+      winH = window.innerHeight;
+    }
+
+    const checkPosition = () => {
+      console.log("checkPosition() called");
+      tracked.forEach((tr) => {
+        let posFromTop = tr.getBoundingClientRect().top;
+        if (posFromTop - (winH - 100) <= 0) {
+          tr.classList.add("fade-in-section");
+          tr.classList.remove("not-visible");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", checkPosition);
+    window.addEventListener("resize", init);
+    init();
+    checkPosition();
+    initDataEl.innerHTML = "winH: " + winH;
+  })();
+</script>
+</html>

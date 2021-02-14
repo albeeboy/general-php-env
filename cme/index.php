@@ -36,6 +36,9 @@
     https://www.futuresfundamentals.org/see-the-impact/the-ingredients-of-everyday-life/
     https://www.futuresfundamentals.org/see-the-impact/energy-futures/gas-prices-explained/
     */
+    // prod test local
+    $env = 'local';
+
     $ff_anchors = array(
       'bases' => array(
         'local' => 'http://localhost:8080',
@@ -97,14 +100,14 @@
       <h1>FF anchor links</h1>
       <p><em>09 Oct 2020</em></p>
       <ol class="anchor-links-list">
-        <li><a href="<?=$ff_anchors['bases']['test'];?>/explore-the-marketplace/the-wide-world-of-futures-traders/#ff-intro-behavioral-econ" target="_blank">#EE Resources</a></li>
-        <li><a href="<?=$ff_anchors['bases']['test'];?>/explore-the-marketplace/the-exchange-how-it-works/assess-market-conditions/#ff-question-of-choice" target="_blank">#EE Question of choice</a></li>
-        <li><a href="<?=$ff_anchors['bases']['test'];?>/for-educators/#ff-econ-essentials" target="_blank">#Econ essentials</a></li>
-        <li><a href="<?=$ff_anchors['bases']['test'];?>/for-educators/#ff-interactive-learning-modules" target="_blank">#Interactive Learning Modules</a></li>
-        <li><a href="<?=$ff_anchors['bases']['test'];?>/get-the-basics/economics-101/#ff-foundations-of-finance" target="_blank">#Foundations of Finance</a></li>
-        <li><a href="<?=$ff_anchors['bases']['test'];?>/get-the-basics/futures-and-options/#ff-intro-behavioral-econ" target="_blank">#EE Intro to behavioral econ</a></li>
-        <li><a href="<?=$ff_anchors['bases']['test'];?>/see-the-impact/the-ingredients-of-everyday-life/#ff-food-fuel-finance" target="_blank">#Additional resource (Food, Fuel,and Finance)</a></li>
-        <li><a href="<?=$ff_anchors['bases']['test'];?>/see-the-impact/energy-futures/gas-prices-explained/#ff-affected-by-price" target="_blank">#EE How we are affected by price</a></li>
+        <li><a href="<?=$ff_anchors['bases'][$env];?>/explore-the-marketplace/the-wide-world-of-futures-traders/#ff-intro-behavioral-econ" target="_blank">#EE Resources</a></li>
+        <li><a href="<?=$ff_anchors['bases'][$env];?>/explore-the-marketplace/the-exchange-how-it-works/assess-market-conditions/#ff-question-of-choice" target="_blank">#EE Question of choice</a></li>
+        <li><a href="<?=$ff_anchors['bases'][$env];?>/for-educators/#ff-econ-essentials" target="_blank">#Econ essentials</a></li>
+        <li><a href="<?=$ff_anchors['bases'][$env];?>/for-educators/#ff-interactive-learning-modules" target="_blank">#Interactive Learning Modules</a></li>
+        <li><a href="<?=$ff_anchors['bases'][$env];?>/get-the-basics/economics-101/#ff-foundations-of-finance" target="_blank">#Foundations of Finance</a></li>
+        <li><a href="<?=$ff_anchors['bases'][$env];?>/get-the-basics/futures-and-options/#ff-intro-behavioral-econ" target="_blank">#EE Intro to behavioral econ</a></li>
+        <li><a href="<?=$ff_anchors['bases'][$env];?>/see-the-impact/the-ingredients-of-everyday-life/#ff-food-fuel-finance" target="_blank">#Additional resource (Food, Fuel,and Finance)</a></li>
+        <li><a href="<?=$ff_anchors['bases'][$env];?>/see-the-impact/energy-futures/gas-prices-explained/#ff-affected-by-price" target="_blank">#EE How we are affected by price</a></li>
       </ol>
   </section>
 
