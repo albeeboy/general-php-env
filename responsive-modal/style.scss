@@ -1,0 +1,65 @@
+body {
+  font: {
+    family: "Roboto", sans-serif;
+    style: regular;
+    weight: 300;
+    size: 1rem;
+  }
+
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+#main-navigation {
+  width: 100%;
+  height: 4.75rem;
+  background-color: #555;
+  color: #fff;
+
+  .the-logo {
+    color: white;
+  }
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      .menu-item {
+        display: inline-block;
+        padding: 0 0.75rem;
+        a {
+          text-transform: uppercase;
+          text-decoration: none;
+          color: white;
+          font-weight: 600;
+          letter-spacing: 0.125rem;
+          transition: color 0.3s linear;
+          &:hover {
+            color: #333;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+#leadspace {
+  width: 100%;
+  height: 31.25rem;
+  background-color: navy;
+  color: #fff;
+}
