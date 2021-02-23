@@ -74,8 +74,10 @@
       <li><a href="./sappi/sappi_07242020.html">Sappi email responder 1</a></li>
       <li><a href="./vsa-icims-page">VSA iCIMS page</a></li>
       <li><a href="./6769saintnicholas">67-69 Saint Nicholas experiments</a></li>
+      <li><a href="./scrolling">Fun with scrolling</a></li>
       <li><a href="./cme">CME video embed link experiments</a></li>
       <li><a href="./css-animations">CSS animation experiments</a></li>
+      <li><a href="./responsive-modal">Pure CSS responsive modal</a></li>
     </ul>
   </section>
 </body>
