@@ -24,11 +24,11 @@ nav {
   align-items: center;
   position: relative;
   width: 100%;
-  padding: 0 5rem;
+  padding: 1.625rem 5rem 0;
   box-sizing: border-box;
   height: 4.625rem;
   background-color: #333;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .menu-items {
@@ -38,7 +38,7 @@ nav {
   align-items: center;
   list-style: none;
   margin: 0;
-  padding: 2rem 0 0 0;
+  padding: 0;
   width: auto;
   font-weight: 600;
   font-size: 0.875rem;
@@ -50,17 +50,23 @@ nav {
   letter-spacing: 2px;
 }
 .menu-items .menu-item a {
+  background-color: rgba(0, 128, 0, 0.4);
   display: block;
   padding: 0 1.25rem;
   color: #ddd;
-  background-color: #666;
   text-decoration: none;
-  height: 2.5rem;
+  height: 2rem;
   transition: color 0.3s linear;
-  border-bottom: 8px solid salmon;
 }
 .menu-items .menu-item a:hover {
   color: #aaa;
+}
+.menu-items .menu-item a span {
+  display: inline-block;
+  height: 100%;
+}
+.menu-items .menu-item.current-menu-item a span {
+  border-bottom: 8px solid salmon;
 }
 
 .row {
@@ -73,7 +79,27 @@ nav {
   padding: 0 1rem;
 }
 
-.subnav-items-container {
+.subnav-items__safety {
+  box-sizing: border-box;
+  bottom: -0.5rem;
+  display: block;
+  height: 1rem;
+  left: 0;
+  position: absolute;
+  width: inherit;
+  background-color: rgba(255, 0, 0, 0.4);
+  z-index: 2;
+}
+.subnav-items__container {
+  display: block;
+  position: absolute;
+  top: 4.625rem;
+  background-color: rgba(255, 0, 0, 0.5);
+  z-index: 999;
+  width: 100%;
+}
+
+.subnav-item {
   display: flex;
   flex-flow: row nowrap;
   position: absolute;
@@ -82,28 +108,21 @@ nav {
   padding: 2rem 5rem;
   box-sizing: border-box;
   background-color: #dedede;
-  z-index: 99;
-}
-
-.subnav-1,
-.subnav-2 {
+  z-index: 999;
   opacity: 1;
-  top: -18.375rem;
-  transition: top 0.4s ease-out;
+  top: -23rem;
+  transition: top 0.5s ease-out;
 }
-.subnav-1.open,
-.subnav-2.open {
+.subnav-item.open {
   opacity: 1;
-  top: 4.625rem;
+  top: 0;
 }
-.subnav-1.init-close,
-.subnav-2.init-close {
-  top: 4.625rem;
+.subnav-item.init-close {
+  top: 0;
   opacity: 1;
   transition: opacity 0.3s linear;
 }
-.subnav-1.closed,
-.subnav-2.closed {
+.subnav-item.closed {
   opacity: 0;
 }
 
