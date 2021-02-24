@@ -60,6 +60,37 @@ p {
 #leadspace {
   width: 100%;
   height: 31.25rem;
-  background-color: navy;
+  background-color: #02075d;
   color: #fff;
+}
+
+.fluidity {
+  background-color: goldenrod;
+  height: 12rem;
+  position: relative;
+  width: calc(100% - 7rem);
+  margin: 0 auto;
+
+  &-body-text {
+    font: {
+      size: 1.5rem;
+      weight: 500;
+    }
+    color: cyan;
+  }
+}
+
+.bg {
+  &--chocolate {
+    background-color: chocolate;
+  }
+  &--goldenrod {
+    background-color: goldenrod;
+  }
+  &--green {
+    background-color: green;
+  }
+  &--yellow {
+    background-color: yellow;
+  }
 }

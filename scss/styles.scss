@@ -162,3 +162,22 @@ button {
     }
   }
 }
+
+.links {
+  font: {
+    family: $font-roboto;
+    weight: 300;
+    size: 1rem;
+  }
+  ul {
+    font-size: 1.5rem;
+    li a {
+      color: $white;
+      text-decoration: none;
+      transition: color 0.3s linear;
+      &:hover {
+        color: $light-gray;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+body, div, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, pre, code, blockquote {
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+}
+body {
+	font-family: bree, sans-serif;
+	font-weight: 300;
+	font-size: 1rem;
+	font-style: normal;
+	line-height: 1.6;
+	-epub-hyphens: auto;
+}
+strong {
+	font-weight: 600;
+}
+
+.main-section {
+	padding: 3rem;
+}
+.Basic-Text-Frame {
+	border-style: solid;
+}
+.Basic-Paragraph {
+	color :#000000;
+	font-family: "Minion Pro", serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.9;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	orphans: 1;
+	page-break-after: auto;
+	page-break-before: auto;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+	text-transform: none;
+	widows: 1;
+}
+.CharOverride, .CharOverride-1, .CharOverride-2 {
+	font-family: bree, sans-serif;
+	font-size: 1.75rem;
+	font-style: normal;
+}
+.CharOverride {
+	font-weight: 300;
+}
+.CharOverride-1 {
+	font-weight: 600;
+	font-feature-settings: "ss03";
+}
+.CharOverride-2 {
+	font-weight: 300;
+	font-feature-settings: "ss03";
+}

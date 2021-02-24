@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pure CSS Responsive Modal</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/uzr4whm.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -42,9 +43,97 @@
     </div>
   </section>
 
-  <section id="full-width-modal">
-
+  <section class="bg--goldenrod">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Standard Container</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p class="fluidity-body-text bg--chocolate">4-columns</p>
+        </div>
+        <div class="col-8">
+          <p class="fluidity-body-text bg--green">8-columns</p>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <section class="bg--goldenrod">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Standard Container</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p class="fluidity-body-text bg--chocolate">column</p>
+        </div>
+        <div class="col">
+          <p class="fluidity-body-text bg--green">column</p>
+        </div>
+        <div class="col">
+          <p class="fluidity-body-text bg--chocolate">column</p>
+        </div>
+        <div class="col">
+          <p class="fluidity-body-text bg--green">column</p>
+        </div>
+        <div class="col">
+          <p class="fluidity-body-text bg--chocolate">column</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fluidity">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <h3>Container Fluid inside Fluidity</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p class="fluidity-body-text bg--chocolate">4-columns</p>
+        </div>
+        <div class="col-8">
+          <p class="fluidity-body-text bg--green">8-columns</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fluidity">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+        <h3>Container Fluid inside Fluidity</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p class="fluidity-body-text bg--chocolate">column</p>
+        </div>
+        <div class="col">
+          <p class="fluidity-body-text bg--green">column</p>
+        </div>
+        <div class="col">
+          <p class="fluidity-body-text bg--chocolate">column</p>
+        </div>
+        <div class="col">
+          <p class="fluidity-body-text bg--green">column</p>
+        </div>
+        <div class="col">
+          <p class="fluidity-body-text bg--chocolate">column</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="full-width-modal"></section>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>

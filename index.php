@@ -78,6 +78,7 @@
       <li><a href="./cme">CME video embed link experiments</a></li>
       <li><a href="./css-animations">CSS animation experiments</a></li>
       <li><a href="./responsive-modal">Pure CSS responsive modal</a></li>
+      <li><a href="./web-fonts">Fun with web fonts</a></li>
     </ul>
   </section>
 </body>
