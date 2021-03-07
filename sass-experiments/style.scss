@@ -1,0 +1,44 @@
+// variables
+$element-margins: (
+  bottom: 20px,
+  left: 12px,
+  right: 24px,
+  top: 16px
+);
+$layout-margins: (
+  bottom: 48px,
+  left: 18px,
+  right: 64px,
+  top: 24px
+);
+$margin-maps: $element-margins, $layout-margins;
+$types: element, layout;
+$prop: margin;
+
+body {
+  font: {
+    family: "Roboto", sans-serif;
+    style: regular;
+    weight: 300;
+    size: 1rem;
+  }
+
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+@each $type in $types {
+  .#{$type} {
+    &__#{$prop} {
+      @each $map in $margin-maps {
+        @each $dir, $margin in $map {
+          &--#{$dir} {
+            #{$prop}-#{$dir}: $margin;
+          }
+        }
+      }
+    }
+  }
+}

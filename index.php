@@ -79,6 +79,7 @@
       <li><a href="./css-animations">CSS animation experiments</a></li>
       <li><a href="./responsive-modal">Pure CSS responsive modal</a></li>
       <li><a href="./web-fonts">Fun with web fonts</a></li>
+      <li><a href="./sass-experiments">SASS experiments</a></li>
     </ul>
   </section>
 </body>
