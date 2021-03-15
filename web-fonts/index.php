@@ -11,9 +11,11 @@
 <body>
   
   <div id="main-container">
+
     <section class="links">
       <ul>
         <li><a href="bree_alt_ampersand.php">Bree alternate ampersand experiments &raquo;</a></li>
+        <li><a href="non-breaking-space.php">Non-breaking spaces &raquo;</a></li>
       </ul>
     </section>
   </div>
