@@ -20,6 +20,12 @@
 			<div id="_idContainer003" class="Basic-Text-Frame">
 				<p class="Basic-Paragraph"><span class="CharOverride">This is the Bree Light default ampersand: &amp;</span></p>
 			</div>
+			<div id="_idContainer003" class="Basic-Text-Frame">
+				<p class="Basic-Paragraph"><span class="CharOverride">This is the Bree Light default Q</span></p>
+			</div>
+			<div id="_idContainer003" class="Basic-Text-Frame">
+				<p class="Basic-Paragraph"><span class="CharOverride-2">This is the Bree Light stylistic set 1: a &amp; Q</span></p>
+			</div>
 		</section>
 	</body>
 </html>
