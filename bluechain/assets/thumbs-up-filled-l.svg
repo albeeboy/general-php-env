@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="32px" viewBox="0 0 37 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>thumbs-up-filled-l</title>
+    <defs>
+        <path d="M10,10.9934082 L10,28.9957275 L0,28.9957275 L0,10.9934082 L10,10.9934082 Z M11,28.9980469 L11,10.9993896 C11.6702894,10.8191352 15.8035608,8.10562222 16.6708487,1.84430461 C19.3336016,-1.74463222 25.0266246,0.524323208 25.2520623,3.39403545 C25.4023542,5.30717695 25.4775312,7.32996591 25.4775935,9.46240234 L33.5188328,9.46240234 C35.9077267,9.46240234 36.5769975,10.5785356 36.5769975,12.8730029 C36.5769975,13.5970866 35.8644284,31.9952393 31.9120085,31.9952393 L19.0430802,31.9952393 C16.7574002,31.9952393 12.9201374,29.00447 11,28.9980469 Z" id="path-1"></path>
+    </defs>
+    <g id="BlueChain" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1160_02_Hover-state" transform="translate(-106.000000, -387.000000)">
+            <g id="02_Design/Icons/02_Medium-Light/Communications/sentiment-smile-m-l" transform="translate(106.000000, 387.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#B1E6FF" fill-rule="nonzero" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

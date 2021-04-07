@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200,200i,300,300i,400,400i,500,500i,600,600i" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+        <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-2.2.4.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
+    </head>
+
+    <body>
+        <div class="container header">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-10" id="">Signed in as Jason <a href="javascript:;">not you?</a></div>
+                <div class="col"></div>
+            </div>
+        </div>
+        <div class="container py-6">
+            <span class="temp" style="display: none"></span>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-10" id="output"></div>
+                <div class="col"></div>
+            </div>
+            <div class="row pt-5">
+                <div class="col"></div>
+                <div class="col-10" id="output-options"></div>
+                <div class="col"></div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-3 reset-container"
+                        ><a href="javascript:void(0);" id="btnReset"><span class="icon reset"></span> Reset</a>
+                    </div>
+                    <div class="col-8"></div>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+    <script>
+            var dilogue;
+            var selectedText = [];
+            jQuery.extend(jQuery.expr[':'], {
+                focusable: function (el, index, selector) {
+                    return $(el).is(' :input');
+                    //return $(el).is('a, button, :input, [tabindex]');
+                }
+            });
+            $(document).on('keyup', 'input', function (e) {
+                var currentNodeId = $(this).attr('data-node');
+                $(".temp").html($('#node-'+currentNodeId+' .tt-input').val());
+                console.log($(this).attr('data-node'));
+                $('#node-cursor-'+currentNodeId).css('left',$(".temp").width()+5);
+            });
+            $(document).on('keypress', 'input,select', function (e) {
+                if (e.which == 13) {
+                    e.preventDefault();
+                    var currentNode;
+                    var currentNodeId = 0;
+                    var jumpText = "";
+                    var nextNode;
+                    if($(this).attr('data-node') && $(this).val() != '' ){
+                        currentNodeId = $(this).attr('data-node');
+                        currentNode = dilogue[currentNodeId];
+                        jumpText = $('#node-'+currentNodeId+' .tt-input').val();
+
+                        var substringRegex;
+                        
+                        Object.keys(currentNode.options).forEach(function(k){
+                            substrRegex = new RegExp(jumpText.toLowerCase(), 'i');
+                            if(currentNode.options[k].text.toLowerCase() == jumpText.toLowerCase()){
+                                nextNode = currentNode.options[k].jumpnodeid;
+                                selectedText['node-'+currentNodeId] = jumpText;
+                            }else{
+                                if (substrRegex.test(currentNode.options[k].text)) {
+                                    jumpText = currentNode.options[k].text;
+                                    nextNode = currentNode.options[k].jumpnodeid;
+                                    selectedText['node-'+currentNodeId] = jumpText;
+                                }
+                            }
+                        });
+
+                        $('#node-'+currentNodeId+' .tt-input').css('display','none');
+                        $('#output').html($('#output').html() + '<div class="opt-selected" id="opt-selected-'+currentNodeId+'">'+jumpText+'</div>');
+                        $('#opt-selected-'+currentNodeId).each(function(){
+                            $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+                        });
+                        anime.timeline({loop: false})
+                            .add({
+                                translateX: [0,$('#opt-selected-'+currentNodeId).width()],
+                                easing: "easeOutExpo",
+                                duration: 700,
+                                delay: 100
+                            }).add({
+                                targets: '#opt-selected-'+currentNodeId+' .letter',
+                                opacity: [0,1],
+                                easing: "easeOutExpo",
+                                duration: 600,
+                                offset: '-=775',
+                                delay: function(el, i) {
+                                return 34 * (i+1)
+                                }
+                            });
+                        
+                            //window.setTimeout( show_popup, 5000 ); // 5 seconds
+                            
+                        $('#node-'+currentNodeId+' .tt-hint').css('display','none');
+                        $('#node-cursor-'+currentNodeId).css('display','none');
+
+                        console.log(selectedText);
+                        
+                        
+                        $('#node-'+currentNodeId+' .tt-menu').css('display','none');
+
+                        var timer = setTimeout(function(){
+                            $('#output').html($('#output').html() + currentNode.posttext);
+                            clearTimeout(timer);
+                            if (nextNode){
+                                nodeProcess(nextNode);
+                            }
+                        }, 800);
+                    }
+                }
+            });
+            $('#btn').click(function(){
+                console.log('click', $('#node-0 .tt-input').val());
+            });
+            $(document).ready(function(){
+                $.get( "bluechain.json", function(data) {
+                   dilogue = data;
+                   console.log(data[0]);
+                   nodeProcess(0);
+                })
+            });
+        </script>
+        <script>
+        function nodeProcess(node){
+                currentNode = dilogue[node]; 
+                console.log(currentNode);
+                var html = currentNode.pretext;
+                if (currentNode.type == 'autofill'){
+                    html += '<div id="node-'+node+'" class="nodes"> <input data-node="'+node+'" class="typeahead" type="text" placeholder=""></div>';
+                
+                    $('#output').html($('#output').html() + html);
+                    
+                    var nodeOptions = [];
+                    Object.keys(currentNode.options).forEach(function(k){
+                        //console.log(k + ' - ' + currentNode.options[k].text);
+                        nodeOptions[k] = currentNode.options[k].text;
+                    });
+    
+                    $('#node-'+node+' .typeahead').typeahead({
+                        hint: false,
+                        highlight: true,
+                        minLength: 0
+                    },
+                    {
+                        source: substringMatcher(nodeOptions)
+                    });
+                    $('#node-'+node+' .tt-input').focus();
+                    $('#node-'+node+' .twitter-typeahead').append("<div id='node-cursor-"+node+"' class=cursor>&nbsp;</div>");
+                    $('.tt-suggestion').click(function(){
+                        $(".temp").html($(this).html());
+                        $('.cursor').css('left',$(".temp").width()+8);
+                        //--- Node Process -----------
+                        var currentNode;
+                        var currentNodeId = $(this).parentsUntil('.nodes').parent().attr('id').split('-')[1];
+                        var jumpText = "";
+                        var nextNode;
+                        var newThis = $('#node-'+currentNodeId+' .tt-input');
+                                if(newThis.attr('data-node')){
+                                    currentNodeId = newThis.attr('data-node');
+                                    currentNode = dilogue[currentNodeId];
+                                    jumpText = $(this).html();
+                                    console.log('text: '+$('#node-'+currentNodeId+' .tt-input').val());
+                                    $('#node-'+currentNodeId+' .tt-input').css('display','none');
+                                    $('#output').html($('#output').html() + '<div class="opt-selected" id="opt-selected-'+currentNodeId+'">'+jumpText+'</div>');
+                                    
+                                    $('#opt-selected-'+currentNodeId).each(function(){
+                                        $('#opt-selected-'+currentNodeId).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+                                    });
+
+                                    anime.timeline({loop: false})
+                                        .add({
+                                            translateX: [0,$('#opt-selected-'+currentNodeId).width()],
+                                            easing: "easeOutExpo",
+                                            duration: 700,
+                                            delay: 100
+                                        }).add({
+                                            targets: '#opt-selected-'+currentNodeId+' .letter',
+                                            opacity: [0,1],
+                                            easing: "easeOutExpo",
+                                            duration: 600,
+                                            offset: '-=775',
+                                            delay: function(el, i) {
+                                            return 34 * (i+1)
+                                            }
+                                        });
+                                   
+                                        
+                                    $('#node-'+currentNodeId+' .tt-hint').css('display','none');
+                                    $('#node-cursor-'+currentNodeId).css('display','none');
+                                    
+                                    
+                                    Object.keys(currentNode.options).forEach(function(k){
+                                        if(currentNode.options[k].text.toLowerCase() == jumpText.toLowerCase()){
+                                            nextNode = currentNode.options[k].jumpnodeid;
+                                            selectedText['node-'+currentNodeId] = jumpText;
+                                        }
+                                    });
+
+                                    console.log(selectedText);
+                                    
+                                    
+                                    $('#node-'+currentNodeId+' .tt-menu').css('display','none');
+
+                                    var timerInner = setTimeout(function(){
+                                        $('#output').html($('#output').html() + currentNode.posttext);
+                                        clearTimeout(timerInner);
+                                        if (nextNode){
+                                            nodeProcess(nextNode);
+                                        }
+                                    }, 800);
+                                }
+                        //--- Node Process End -------
+                    });
+                }
+                if (currentNode.type == 'multiselect'){
+                    $('#output-options').css('display','block');
+                    html += '<div id="node-'+node+'" class="nodes"> <span class="tt-span" id="tt-span-'+node+'"></span><input style= "width: 100%; display:none" disabled data-node="'+node+'" class="tt-input" type="hidden" placeholder=""> </div>';
+                
+                    $('#output').html($('#output').html() + html);
+                    
+                    var nodeOptions = "";
+                    Object.keys(currentNode.options).forEach(function(k){
+                        //console.log(k + ' - ' + currentNode.options[k].text);
+                        //console.log(currentNode.options.length, k);
+                        if (k != currentNode.options.length-1){
+                            nodeOptions += '<a href="javascript:;" data-text="'+currentNode.options[k].text+'" class="btn-option" id="node-'+node+'-'+k+'"><span class="icon circle-plus"></span> '+currentNode.options[k].text+'</a><br/>';
+                        }else{
+                            nodeOptions += '<a class="btn-selectAll" href="javascript:;" id="select-'+node+'"> Select all </a> &nbsp; &nbsp; <a class="btn-done" href="javascript:;" data-jump-id="'+currentNode.options[k].jumpnodeid+'" id="node-'+node+'-'+k+'"> Done </a>';
+                        }
+                    });
+                    
+                    $("#output-options").html(nodeOptions);
+                    $('#node-'+node+' .tt-input').focus();
+    
+                    var nodeSelected = [];
+                    $('.btn-option').click(function(){
+                        
+                        var myicon = $('#'+$(this).attr('id')+' .icon');
+                        if (myicon.hasClass('circle-plus')){
+                            myicon.parent().removeClass('opt-active').addClass('opt-deactive');
+                            myicon.removeClass('circle-plus').addClass('circle-minus');
+                            nodeSelected.push($(this).attr('data-text'));
+                        }else{
+                            myicon.parent().removeClass('opt-deactive').addClass('opt-active');
+                            myicon.removeClass('circle-minus').addClass('circle-plus');
+                            var index = nodeSelected.indexOf($(this).attr('data-text'));
+                            if (index >= 0) {
+                                nodeSelected.splice( index, 1 );
+                            }
+                        }
+                        if (nodeSelected.length == 0){
+                            $('#node-'+node+' .tt-input').val('');
+                            $('#node-'+node+' .tt-span').html('');
+                        }else if (nodeSelected.length == 1){
+                            $('#node-'+node+' .tt-input').val(nodeSelected[0]);
+                            $('#node-'+node+' .tt-span').html(nodeSelected[0]);
+                        }else if(nodeSelected.length == 2){
+                            var txt = nodeSelected.join(" and ");
+                            $('#node-'+node+' .tt-input').val(txt);
+                            $('#node-'+node+' .tt-span').html(txt);
+                        }else if(nodeSelected.length > 2){
+                            var txt="";
+                            for (var i = 0; i < nodeSelected.length-1; i++){
+                                txt += nodeSelected[i] + ', ';
+                            }
+                            txt = txt.slice(0, -2) + ' and ' +nodeSelected[nodeSelected.length - 1];
+                            $('#node-'+node+' .tt-input').val(txt);
+                            $('#node-'+node+' .tt-span').html(txt);
+                        }
+
+                        $('#tt-span-'+node).each(function(){
+                            $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+                        });
+
+                        anime.timeline({loop: false})
+                            .add({
+                                translateX: [0,$('#tt-span-'+node).width()],
+                                easing: "easeOutExpo",
+                                duration: 700,
+                                delay: 100
+                            }).add({
+                                targets: '#tt-span-'+node+' .letter',
+                                opacity: [0,1],
+                                easing: "easeOutExpo",
+                                duration: 600,
+                                offset: '-=775',
+                                delay: function(el, i) {
+                                return 34 * (i+1)
+                                }
+                            });
+                        //console.log(nodeSelected);
+                    });
+    
+                    $('.btn-selectAll').click(function(){
+                        console.log($(this).attr('id').split('-')[1]);
+                        
+                        var mycurrentNodeId = $(this).attr('id').split('-')[1];
+                        var mycurrentNode = dilogue[mycurrentNodeId];
+                        
+                        Object.keys(mycurrentNode.options).forEach(function(k){
+                            if (k != mycurrentNode.options.length-1){
+                                $('#node-'+mycurrentNodeId+'-'+k).click();
+                            }
+                        }); 
+                    });
+
+                    $('.btn-done').click(function(){
+                        var id = $(this).attr('id').split('-');
+                        var nodeId = id[1];
+                        selectedText['node-'+nodeId] = $('#node-'+nodeId+' .tt-input').val();
+                        $('#node-'+nodeId+' .tt-input').css('display','none');
+                        $('#node-'+nodeId+' .tt-span').css('display','none');
+                        $('#output-options').css('display','none');
+                        $('#output').html($('#output').html() + '<div class="opt-selected" id="opt-selected-'+nodeId+'">'+$('#node-'+nodeId+' .tt-input').val()+'</div>');
+                        var char = $('#opt-selected-'+nodeId).html().length; 
+                        $('#opt-selected-'+nodeId).each(function(){
+                            $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+                        });
+                        anime.timeline({loop: false})
+                            .add({
+                                translateX: [0,$('#opt-selected-'+nodeId).width()],
+                                easing: "easeOutExpo",
+                                duration: 700,
+                                delay: 100
+                            }).add({
+                                targets: '#opt-selected-'+nodeId+' .letter',
+                                opacity: [0,1],
+                                easing: "easeOutExpo",
+                                duration: 600,
+                                offset: '-=775',
+                                delay: function(el, i) {
+                                return 34 * (i+1)
+                                }
+                            });
+                        var that = $(this); 
+                        var timer = setTimeout(function(){
+                            $('#output').html($('#output').html() + dilogue[nodeId].posttext);
+                            if (that.attr('data-jump-id')>0){
+                                nodeProcess(that.attr('data-jump-id'));    
+                            }
+                        }, (char * 50));
+                    });
+                }
+                if (currentNode.type == 'date'){
+                    console.log('Date code Here');
+                    html += '<div id="node-'+node+'" class="nodes"> <input data-jump-id="'+currentNode.options[0].jumpnodeid+'" type="text" class="" id="date-'+node+'" /> </div>';
+                    $('#output').html($('#output').html() + html);
+
+                    $('#date-'+node).datepicker({
+                        autoclose: true,
+                        todayHighlight: true
+                    }).on('changeDate', function (ev) {
+                        $('#date-'+node).css('display','none');
+                        $('#output').html($('#output').html() + '<div class="opt-selected" id="opt-selected-'+node+'">'+$('#date-'+node).val()+'</div>');
+                        var char = $('#opt-selected-'+node).html().length; 
+                        $('#opt-selected-'+node).each(function(){
+                            $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+                        });
+                        anime.timeline({loop: false})
+                            .add({
+                                translateX: [0,$('#opt-selected-'+node).width()],
+                                easing: "easeOutExpo",
+                                duration: 700,
+                                delay: 100
+                            }).add({
+                                targets: '#opt-selected-'+node+' .letter',
+                                opacity: [0,1],
+                                easing: "easeOutExpo",
+                                duration: 600,
+                                offset: '-=775',
+                                delay: function(el, i) {
+                                return 34 * (i+1)
+                                }
+                            });
+                        var that = $(this); 
+                        var timer = setTimeout(function(){
+                            $('#output').html($('#output').html() + dilogue[node].posttext);
+                            if (that.attr('data-jump-id')>0){
+                                nodeProcess(that.attr('data-jump-id'));    
+                            }
+                        }, (char * 50));
+                    });
+                    $('#date-'+node).focus();
+                }
+            }
+        $('#btnReset').click(function(){
+            location.reload();
+        });
+        var substringMatcher = function(strs) {
+            return function findMatches(q, cb) {
+                var matches, substringRegex;
+            
+                // an array that will be populated with substring matches
+                matches = [];
+            
+                // regex used to determine if a string contains the substring `q`
+                substrRegex = new RegExp(q, 'i');
+            
+                // iterate through the pool of strings and for any string that
+                // contains the substring `q`, add it to the `matches` array
+                $.each(strs, function(i, str) {
+                if (substrRegex.test(str)) {
+                    matches.push(str);
+                }
+                });
+            
+                cb(matches);
+            };
+
+            };
+        </script>
+        <style>
+            .nodes{
+                display: inline;
+            }
+            input{
+                border:1px solid transparent;
+                margin-top: 6px;
+            }
+        </style>
+    </html>
+    
