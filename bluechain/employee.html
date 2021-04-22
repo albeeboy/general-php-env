@@ -1,0 +1,553 @@
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200,200i,300,300i,400,400i,500,500i,600,600i" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+      <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-2.2.4.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	  <script src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.min.js"></script>
+	  <script src='//ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+  </head>
+
+  <body style="background-color: #054ada;">
+  	<div class="container-fluid" id="employee">
+  		<!-- CONTROLS -->
+	  	<div class="controls">
+				<div class="sectionIndicators"></div>
+        <div class="buttons">
+          <a href="javascript:;" id="btnPrevious"><span class="icon caret-up"></span></a> <a href="javascript:;" id="btnNext"><span class="icon caret-down"></span></a> <!-- <a href="javascript:;" id="btnGoto" data-goto="5">Goto 5</a> --><br/>
+        </div>
+			</div>
+
+			<!-- Section 1 Slide 1 -->			
+			<section id="slide-1" class="row section" data-slide-color="#054ada" data-slide-padding-top="29vh" data-section-id="1" data-hide-previous="1" data-hide-next="1">
+
+				<div class="col-1"></div>
+				<div class="screen col-10 section-screen-1">
+          <div class="row">
+					 <h1>Welcome to IBM,<br>Jay LaPlante!</h1>
+          </div>
+          <div class="row pt-3">
+            <p class="not-you">Not you? <a href="#">Click here.</a></p>
+          </div>
+
+          <div class="row fixed-bottom" id="get-started">
+            <div class="col-1"></div>
+            <a href="javascript:;" class="col-4">
+              <p class="cta">Get started</p>
+              <p class="cta-plus"><span class="icon thin-plus"></span></p>
+            </a>
+            <div class="col-7"></div>
+          </div>
+        </div>
+				<div class="col-1"></div>
+
+				<div class="subSection" id="subSection-1">	
+					<a class="hidesubSection" data-subsection-id="1" href="javascript:;">Hide Subsection</a>
+					<h1>Subsection 1</h1>
+				</div>
+			</section>
+
+			<!-- Section 1 Slide 2-->
+			<section id="slide-2" class="row section" data-slide-color="#054ada" data-slide-padding-top="11vh" data-section-id="1">
+				<div class="col-1"></div>
+				<div class="screen col-10 section-screen-1">
+          <div class="row">
+            <div class="col-7">
+              <p class="summary">First, we’d like to confirm the information we have on file for you. Please review and confirm the following:</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-9">
+              <h3 style="margin-bottom: 2.375rem;">You are <span class="span_name">Jay LaPlante</span> and your mobile phone number is <span class="span_phone">917-214-8786</span></h3>
+          	</div>
+          </div>
+          <div class="row">
+            <div class="col-3 response-container">
+            	<a class="thumbs-up-response-btn" href="javascript:;">
+	            	<div class="flex-align">
+	              	<div class="icon-thumbs-up"><img src="assets/thumbs-up-l.svg" alt="Thumbs up" /></div>
+	              	<div class="response-text">Yes</div>
+	              </div>
+            	</a>
+            </div>
+            <div class="col-3 response-container">
+            	<a class="thumbs-down-response-btn showsubSection" data-subsection-id="2" href="javascript:;">
+	            	<div class="flex-align">
+	              	<div class="icon-thumbs-down"><img src="assets/thumbs-down-l.svg" alt="Thumbs down" /></div>
+	              	<div class="response-text">No</div>
+	              </div>
+	            </a>
+            </div>
+          </div>
+          <!-- <div class="row">
+					 <span id="span_name"></span>
+					 <input type="text" id="txt_name" />
+					 <button type="button" class="btnUpdateInfo">Update</button>
+          </div>
+          <div class="row">
+					 <a class="showsubSection" data-subsection-id="2" href="javascript:;">Show Subsection</a>
+          </div> -->
+				</div>
+				<div class="col-1"></div>
+
+				<!-- Subsection 2 -->
+				<div class="subSection col-12" id="subSection-2">
+					<div class="row">
+						<div class="col-1"></div>
+						<div class="col-10">
+							<div class="row">
+								<div class="hide-subsection-container col">
+									<a class="hidesubSection" data-subsection-id="2" href="javascript:;"><span class="icon arrow-right"></span><span class="text">Back</span></a>
+								</div>
+								<div class="col"></div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<h3>Enter correct name or mobile phone number, and your manager be notified to review</h3>
+								</div>
+								<div class="col"></div>
+							</div>
+							<div class="row">
+								<div class="col subsection-data">
+									<label class="subsection-label" for="text_name_change">Name</label>
+									<input class="subsection-data-input" type="text" id="text_name_change" name="full_name" />
+								</div>
+								<div class="col"></div>
+							</div>
+							<div class="row">
+								<div class="col subsection-data">
+									<label class="subsection-label" for="text_phone_change">Mobile phone number</label>
+									<input class="subsection-data-input" type="text" id="text_phone_change" name="mobile_phone" />
+								</div>
+								<div class="col"></div>
+							</div>
+							<div class="row">
+								<a class="col-2 subsection-submit-data" href="javascript:;">Submit</a>
+								<div class="col-10"></div>
+							</div>
+						</div>
+						<div class="col-1"></div>
+					</div>
+				</div>
+
+			</section>
+
+			<!-- Section 1 Slide 3 -->
+			<section id="slide-3" class="row section" data-slide-color="#054ada" data-slide-padding-top="29vh" data-section-id="1">
+				<div class="col-1"></div>
+
+				<div class="screen col-10 section-screen-1">
+					<div class="row">
+            <div class="col-9">
+              <h3 style="margin-bottom: 2.375rem;">You will be working as <span class="span_role">Engineer</span> in <span class="span_group">IBM Watson and Cloud Platform</span></h3>
+          	</div>
+          </div>
+          <div class="row">
+            <div class="col-3 response-container">
+            	<a class="thumbs-up-response-btn" href="javascript:;">
+	            	<div class="flex-align">
+	              	<div class="icon-thumbs-up"><img src="assets/thumbs-up-l.svg" alt="Thumbs up" /></div>
+	              	<div class="response-text">Yes</div>
+	              </div>
+            	</a>
+            </div>
+            <div class="col-3 response-container">
+            	<a class="thumbs-down-response-btn" href="javascript:;">
+	            	<div class="flex-align">
+	              	<div class="icon-thumbs-down"><img src="assets/thumbs-down-l.svg" alt="Thumbs down" /></div>
+	              	<div class="response-text">No</div>
+	              </div>
+	            </a>
+            </div>
+          </div>
+				</div>
+
+				<div class="col-1"></div>
+			</section>
+
+			<!-- Section 1 Slide 4 -->
+			<section id="slide-4" class="row section" data-slide-color="#054ada" data-slide-padding-top="29vh" data-section-id="1">
+				<div class="col-1"></div>
+
+				<div class="screen col-10 section-screen-1">
+					<div class="row">
+            <div class="col-9">
+              <h3 style="margin-bottom: 2.375rem;">You will be working at <span><span class="span_location">Astor Place, New York</span> (Building: <span class="span_building">002</span>, Floor: <span class="span_floor">03</span>, Office: <span class="span_office">X16</span>)</span></h3>
+          	</div>
+          </div>
+          <div class="row">
+            <div class="col-3 response-container">
+            	<a class="thumbs-up-response-btn" href="javascript:;">
+	            	<div class="flex-align">
+	              	<div class="icon-thumbs-up"><img src="assets/thumbs-up-l.svg" alt="Thumbs up" /></div>
+	              	<div class="response-text">Yes</div>
+	              </div>
+            	</a>
+            </div>
+            <div class="col-3 response-container">
+            	<a class="thumbs-down-response-btn" href="javascript:;">
+	            	<div class="flex-align">
+	              	<div class="icon-thumbs-down"><img src="assets/thumbs-down-l.svg" alt="Thumbs down" /></div>
+	              	<div class="response-text">No</div>
+	              </div>
+	            </a>
+            </div>
+          </div>
+				</div>
+
+				<div class="col-1"></div>
+			</section>
+
+			<!-- Section 1 Slide 5 -->
+			<section id="slide-5" class="row section" data-slide-color="#054ada" data-slide-padding-top="29vh" data-section-id="1" data-hide-next="0">
+				<div class="col-1"></div>
+
+				<div class="screen col-10 section-screen-1">
+					<div class="row">
+            <div class="col-9">
+              <h3 style="margin-bottom: 2.375rem;">Your reporting manager is <span><span class="span_manager">Ed Rowlins</span>, VP System Development, IBM Cloud Infrastructure</span></h3>
+          	</div>
+          </div>
+          <div class="row">
+            <div class="col-3 response-container">
+            	<a class="thumbs-up-response-btn" href="javascript:;">
+	            	<div class="flex-align">
+	              	<div class="icon-thumbs-up"><img src="assets/thumbs-up-l.svg" alt="Thumbs up" /></div>
+	              	<div class="response-text">Yes</div>
+	              </div>
+            	</a>
+            </div>
+            <div class="col-3 response-container">
+            	<a class="thumbs-down-response-btn" href="javascript:;">
+	            	<div class="flex-align">
+	              	<div class="icon-thumbs-down"><img src="assets/thumbs-down-l.svg" alt="Thumbs down" /></div>
+	              	<div class="response-text">No</div>
+	              </div>
+	            </a>
+            </div>
+          </div>
+				</div>
+
+				<div class="col-1"></div>
+			</section>
+
+			<!-- Section 1 Slide 6 SUMMARY -->
+			<section id="slide-6" class="row section" data-alter-color="1" data-slide-color="#ffffff" data-slide-padding-top="11vh" data-section-id="1" data-hide-next="1" data-hide-previous="1">
+				<div class="col-1"></div>
+
+				<div class="screen col-10 section-screen-1">
+					<div class="row">
+            <div class="col-7">
+            	<div class="row">
+              	<p class="summary white-bg">Summary of personal information below. Choose a section to go back and review/edit it.</p>
+              </div>
+
+              <div class="row">
+              	<div class="col">
+              		<p class="summary-label">Name</p>
+              		<p class="summary-value">Jay LaPlante</p>
+              	</div>
+              	<div class="col">
+              		<p class="summary-label">Mobile phone number</p>
+              		<p class="summary-value">917-214-8786</p>
+              	</div>
+              </div>
+
+							<div class="row">
+              	<div class="col">
+              		<p class="summary-label">Role</p>
+              		<p class="summary-value">Engineer</p>
+              	</div>
+              	<div class="col">
+              		<p class="summary-label">Group/BU</p>
+              		<p class="summary-value">IBM Watson and Cloud Platform</p>
+              	</div>
+              </div>
+
+              <div class="row">
+              	<div class="col">
+              		<p class="summary-label">Location</p>
+              		<p class="summary-value">Astor Place, New York</p>
+              	</div>
+              	<div class="col">
+              		<p class="summary-label">Building/Floor/Office</p>
+              		<p class="summary-value">002/03/X16</p>
+              	</div>
+              </div>
+
+              <div class="row">
+              	<div class="col">
+              		<p class="summary-label">Manager</p>
+              		<p class="summary-value">Ed Rowlins, VP System Development, IBM Cloud Infrastructure</p>
+              	</div>
+              	<div class="col">
+              	</div>
+              </div>
+
+          	</div>
+          </div>
+
+          <div class="row fixed-bottom" id="continue-to-2">
+            <div class="col-11"></div>
+            <a href="javascript:;" class="col-1">
+              <p class="cta">Continue</p>
+            </a>
+          </div>
+				</div>
+
+				<div class="col-1"></div>
+			</section>
+
+			<!-- Section 2 Slide 7 -->
+			<section id="slide-7" class="row section" data-alter-color="1" data-slide-color="#ffffff" data-slide-padding-top="11vh" data-section-id="2" data-hide-next="0">
+			</section>
+
+			<!-- Section 3 Slide 8 -->
+			<section id="slide-8" class="row section" data-alter-color="1" data-slide-color="#ffffff" data-slide-padding-top="11vh" data-section-id="3" data-hide-next="0">
+			</section>
+
+  	</div>
+  </body>
+
+  <script>
+	//Demo Employee Information 
+	var txt_name = "Jay LaPlante";
+	var txt_phone = "917-214-8786";
+	var txt_role = "Engineer";
+	var txt_group = "IBM Watson and Cloud Platform ";
+	var txt_location = "Astor Place, New York";
+	var txt_building = "002";
+	var txt_floor = "03";
+	var txt_office = "X16";
+	var txt_manager = "Ed Rowlins";
+
+	loadEmployeeData();
+
+	function loadEmployeeData(){
+		// load textbox
+		$('#txt_name').val(txt_name);
+		$('#txt_phone').val(txt_phone);
+		$('#txt_role').val(txt_role);
+		$('#txt_group').val(txt_group);
+		$('#txt_location').val(txt_location);
+		$('#txt_building').val(txt_building);
+		$('#txt_floor').val(txt_floor);
+		$('#txt_office').val(txt_office);
+		$('#txt_manager').val(txt_manager);
+
+		//load spans
+		$('.span_name').html(txt_name);
+		$('.span_phone').html(txt_phone);
+		$('.span_role').html(txt_role);
+		$('.span_group').html(txt_group);
+		$('.span_location').html(txt_location);
+		$('.span_building').html(txt_building);
+		$('.span_floor').html(txt_floor);
+		$('.span_office').html(txt_office);
+		$('.span_manager').html(txt_manager);
+	}
+
+	$('.btnUpdateInfo').click(function(){
+		txt_name = $('#txt_name').val();
+		txt_phone = $('#txt_phone').val();
+		txt_role = $('#txt_role').val();
+		txt_group = $('#txt_group').val();
+		txt_location = $('#txt_location').val();
+		txt_building = $('#txt_building').val();
+		txt_floor = $('#txt_floor').val();
+		txt_office = $('#txt_office').val();
+		txt_manager = $('#txt_manager').val();
+		loadEmployeeData();
+	});
+
+	//Demo Employee Information 
+	  $('body').on('scroll touchmove mousewheel', function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		return false;
+	})
+
+	var totalSlides = $("#employee").find(".section").length;
+ 	console.log(totalSlides);
+	var currentSlide = 1;
+	var totalSections = 0;
+	var currentSections = 1;
+  var verticalSlideSpeed = 1000;
+  // var h = $(window).height();
+  // var topPadPct = parseFloat($("#slide-1").attr('data-slide-padding-top'));
+	//find max section number
+	$("#employee").find(".section").each(function(index) {
+		//console.log( index + ": " + $(this).attr('data-section-id'));
+		if (totalSections <= $(this).attr('data-section-id')){
+			totalSections = $(this).attr('data-section-id');
+		}
+	});
+	console.log(totalSections);
+	var sectionIndicatorsInner=""
+	for (var i=1; i<=totalSections; i++){
+		sectionIndicatorsInner += '<a href="javascript:;" class="sectionIndicator" id="sectionIndicator-'+i+'"><span class="icon circle-fill circle-size"></span></a>';
+	}
+	$('.sectionIndicators').html(sectionIndicatorsInner);
+	doTasks(1);
+
+	$('#btnGoto').click(function(){
+		console.log($(this).attr('data-goto'));
+		currentSlide = $(this).attr('data-goto');
+		doTasks(currentSlide);
+		$('html, body').animate({
+			scrollTop: $("#slide-"+currentSlide).offset().top
+		}, verticalSlideSpeed);
+	});
+
+	$('#btnNext, .thumbs-up-response-btn').click(function(){
+    console.log('btnNext called');
+		currentSlide++;
+    console.log("*****" + currentSlide)
+		if(currentSlide>totalSlides){
+			currentSlide = totalSlides;
+			return;
+		}
+		console.log(currentSlide);
+		doTasks(currentSlide);
+		$('html, body').animate({
+			scrollTop: $("#slide-"+currentSlide).offset().top
+		}, verticalSlideSpeed);
+	});
+	$('#btnPrevious').click(function(){
+		currentSlide--;
+		if(currentSlide<1){
+			currentSlide = 1;
+			return;
+		}
+		console.log(currentSlide);
+		doTasks(currentSlide);
+		// $('html, body').animate({
+    //     scrollTop: $("#slide-"+currentSlide).offset().top
+    //   }, verticalSlideSpeed, function() {
+    //     if (currentSlide === 1) {
+    //       $('#get-started').fadeIn(400);
+    //     }
+    //   });
+    $('html, body').animate({
+      scrollTop: $("#slide-"+currentSlide).offset().top
+    }, verticalSlideSpeed);
+    if(currentSlide===1){
+      $('#get-started').delay(600).fadeIn(400);
+    }
+  });
+  $('#get-started').click(function() {
+    currentSlide++;
+    doTasks(currentSlide);
+    $(this).fadeOut(400);
+    $('html, body').animate({
+      scrollTop: $("#slide-"+currentSlide).offset().top
+    }, verticalSlideSpeed);
+  });
+
+  $('.response-container .thumbs-up-response-btn').on({
+  	mouseover: function(e) {
+  		$(this).find('img').attr('src', 'assets/thumbs-up-filled-l.svg');
+  	},
+  	mouseout: function(e) {
+  		$(this).find('img').attr('src', 'assets/thumbs-up-l.svg');
+  	},
+  	click: function(e) {
+  		console.log('Thumbs up button clicked!');
+  	}
+  });
+
+  $('.response-container .thumbs-down-response-btn').on({
+  	mouseover: function(e) {
+  		$(this).find('img').attr('src', 'assets/thumbs-down-filled-l.svg');
+  	},
+  	mouseout: function(e) {
+  		$(this).find('img').attr('src', 'assets/thumbs-down-l.svg');
+  	},
+  	click: function(e) {
+  		console.log('Thumbs down button clicked!');
+  	}
+  });
+
+	function doTasks(slideId){
+		//var bgColor = $("#slide-"+slideId).css('background-color',$("#slide-"+slideId).attr('data-slide-color'));
+		$('body').css('background',$("#slide-"+slideId).attr('data-slide-color'));
+    	var padding_top = $("#slide-"+slideId).css('padding-top',$("#slide-"+slideId).attr('data-slide-padding-top'));
+    	// var padding_top = $("#slide-"+slideId).css('padding-top', (h * topPadPct) + 'px');
+		var selectedSection = $("#slide-"+slideId).attr('data-section-id');
+
+		if ($("#slide-"+slideId).attr('data-alter-color')){
+			$('.sectionIndicator').css('color','rgba(0,104,255,0.4)');
+			for (var i=1; i<=selectedSection; i++){
+				$('#sectionIndicator-'+i).css('color','rgba(0,104,255,1)');
+			}
+			$('#btnNext').css('color','rgba(0,104,255,1)');
+			$('#btnPrevious').css('color','rgba(0,104,255,1)');
+		}else{
+			$('.sectionIndicator').css('color','rgba(255,255,255,0.4)');
+			for (var i=1; i<=selectedSection; i++){
+				$('#sectionIndicator-'+i).css('color','rgba(255,255,255,1)');
+			}
+			$('#btnNext').css('color','#fff');
+			$('#btnPrevious').css('color','#fff');
+		}
+		
+		if($("#slide-"+slideId).attr('data-hide-next')==1){
+			$("#btnNext").css('visibility','hidden');
+		}else{
+			$("#btnNext").css('visibility','visible');
+		}
+		if($("#slide-"+slideId).attr('data-hide-previous')==1){
+			$("#btnPrevious").css('visibility','hidden');
+		}else{
+			$("#btnPrevious").css('visibility','visible');
+		}
+	}
+	$('.subSection').hide();
+
+	$(".showsubSection").click(function (e) {
+		console.log($(this).attr('data-subsection-id'));
+		if($("#slide-"+$(this).attr('data-subsection-id')).attr('data-slide-padding-top')>0){
+			$('#subSection-'+$(this).attr('data-subsection-id')).css('margin-top','-'+$("#slide-"+$(this).attr('data-subsection-id')).attr('data-slide-padding-top'));	
+		}
+        $('#subSection-'+$(this).attr('data-subsection-id')).show().animate({left: '5%'}, 400);
+     });
+	 $(".hidesubSection").click(function (e) {
+		$('#subSection-'+$(this).attr('data-subsection-id')).animate({left: '100%'}, 400);
+     });
+	 $('.sectionIndicator').click(function(){
+		console.log($(this).attr('id'));
+		var mySectionId =  $(this).attr('id').split('-');
+		console.log(mySectionId[1]);
+		console.log($("section[data-section-id='"+mySectionId[1]+"']").attr('id'));
+		var currentSlide = $("section[data-section-id='"+mySectionId[1]+"']").attr('id').split('-')[1]
+		doTasks(currentSlide);
+		$('html, body').animate({
+			scrollTop: $("#slide-"+currentSlide).offset().top
+		}, verticalSlideSpeed);
+	 });
+  </script>
+  <style>
+	  /*.section{
+			height:100vh;
+			background-color: red;
+	  }
+	  .controls{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 99;
+	  }*/
+	  .subSection{
+		  background-color:blueviolet;
+		  height:100vh;
+		  width:95%;
+		  position:absolute;
+		  z-index:100;
+		  left:100%;
+	  }
+  </style>
+</html>
