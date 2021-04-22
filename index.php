@@ -80,6 +80,7 @@
       <li><a href="./responsive-modal">Pure CSS responsive modal</a></li>
       <li><a href="./web-fonts">Fun with web fonts</a></li>
       <li><a href="./sass-experiments">SASS experiments</a></li>
+      <li><a href="./skew-experiments">Fun with skew transformations</a></li>
     </ul>
   </section>
 </body>

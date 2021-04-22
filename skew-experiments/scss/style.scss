@@ -1,0 +1,80 @@
+// sass --watch skew-experiments/scss/style.scss:skew-experiments/css/style.css
+
+$gap-coefficient: 0.0419861731; // tan(4.8º) / 2
+$gap-safety: 0.25rem;
+$yellow: #fff96d;
+$gap-height: $gap-coefficient * 100vw;
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+#main-nav {
+  background-color: darkblue;
+  display: block;
+  height: 112px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+#main-content {
+  padding-top: 112px;
+  width: 100%;
+}
+
+.skew-section {
+  background-color: transparent;
+  padding: 4rem 0 0;
+  position: relative;
+
+  &:before {
+    background-image: linear-gradient($yellow, $yellow);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: skewY(-4.8deg);    
+  }
+
+  .content-container {
+    padding-bottom: calc(#{$gap-coefficient} * 100%);
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: 768px) {
+      padding-bottom: calc(#{$gap-coefficient} * 66%);
+    }
+  }
+
+  .gap-fill {
+    background-color: $yellow;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(#{$gap-height} + #{$gap-safety});
+    width: 100%;
+    z-index: 0;
+  }
+}
+
+.eyebrow {
+
+  font: {
+    size: 0.875rem;
+    weight: 600;
+  }
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}

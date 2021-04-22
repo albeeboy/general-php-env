@@ -42,7 +42,7 @@ strong {
 	text-transform: none;
 	widows: 1;
 }
-.CharOverride, .CharOverride-1, .CharOverride-2 {
+.CharOverride, .CharOverride-1, .CharOverride-2, .CharOverride-3 {
 	font-family: bree, sans-serif;
 	font-size: 1.75rem;
 	font-style: normal;
@@ -57,4 +57,8 @@ strong {
 .CharOverride-2 {
 	font-weight: 300;
 	font-feature-settings: "ss01", "ss03";
+}
+.CharOverride-3 {
+	font-weight: 300;
+	font-feature-settings: "ss01";
 }
