@@ -13,9 +13,10 @@
 <body>
 
   <nav id="main-nav">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 col-md-8 offset-md-2">
+    <div class="container-fluid  h-100">
+      <div class="row h-100">
+        <div class="d-flex align-items-center col-12 col-md-8 offset-md-2 h-100">
+          <h6 class="in-nav-header text--uc text--ls-1">Nav links go up in here</h6>
         </div>
       </div>
     </div>
@@ -53,6 +54,27 @@
       </div>
 
       <div class="gap-fill"></div>
+    </section>
+
+    <section class="background-svgs">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-6 offset-md-2">
+            <h2>Illustrating how to incorporate SVGs as background images</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-8 offset-md-2">
+            <div>
+              <h3>Standard <code>&lt;img&gt;</code> implementation</h3>
+              <div><img src="./images/dino.svg" alt="Dino"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
     </section>
 
   </div>
