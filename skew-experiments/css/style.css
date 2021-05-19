@@ -1,0 +1,88 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin-bottom: 1.25rem;
+}
+
+#main-nav {
+  background-color: darkblue;
+  display: block;
+  height: 112px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+#main-content {
+  padding-top: 112px;
+  width: 100%;
+}
+
+.in-nav-header {
+  color: #fff;
+}
+
+.text--uc {
+  text-transform: uppercase;
+}
+.text--ls-1 {
+  letter-spacing: 1px;
+}
+.text--ls-2 {
+  letter-spacing: 2px;
+}
+
+.skew-section {
+  background-color: transparent;
+  padding: 4rem 0 0;
+  position: relative;
+}
+.skew-section:before {
+  background-image: linear-gradient(#fff96d, #fff96d);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: skewY(-4.8deg);
+}
+.skew-section .content-container {
+  padding-bottom: calc(0.0419861731 * 100%);
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .skew-section .content-container {
+    padding-bottom: calc(0.0419861731 * 66%);
+  }
+}
+.skew-section .gap-fill {
+  background-color: #fff96d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(4.19861731vw + 0.25rem);
+  width: 100%;
+  z-index: 0;
+}
+
+.eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=style.css.map */
