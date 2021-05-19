@@ -44,17 +44,17 @@ strong {
 }
 .CharOverride, .CharOverride-1, .CharOverride-2 {
 	font-family: bree, sans-serif;
-	font-size: 1.75rem;
+	font-size: 3rem;
 	font-style: normal;
 }
 .CharOverride {
-	font-weight: 300;
+	font-weight: 600;
 }
 .CharOverride-1 {
 	font-weight: 600;
 	font-feature-settings: "ss03";
 }
 .CharOverride-2 {
-	font-weight: 300;
+	font-weight: 600;
 	font-feature-settings: "ss01", "ss03";
 }
