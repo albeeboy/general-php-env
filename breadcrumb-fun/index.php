@@ -37,11 +37,11 @@
 
     function get_the_title ($slug) {
       $arr = explode('-', $slug);
-      $title = '';
+      $raw_title = '';
       foreach($arr as &$el) {
-        $title .= ucfirst($el) . ' ';
+        $raw_title .= ucfirst($el) . ' ';
       }
-      trim($title, ' ');
+      $title = trim($raw_title, ' ');
       return $title;
     }
 
