@@ -83,6 +83,7 @@
       <li><a href="./skew-experiments">Fun with skew transformations</a></li>
       <li><a href="./switch-statement-hijinks">Fun with switch statements</a></li>
       <li><a href="./breadcrumb-fun">Fun with breadcrumbs</a></li>
+      <li><a href="./cookies">The great cookie adventure</a></li>
     </ul>
   </section>
 </body>
