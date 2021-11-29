@@ -8,6 +8,31 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <?php
+    $array_one = [
+      'gurgle' => 'baz',
+      'humbah' => '',
+      'hizzy' => 'glak',
+    ];
+    $array_two = [
+      'huzzah' => '',
+      'glorpy' => '',
+      'cagtib' => '',
+    ];
+
+    echo '<!-- ' . PHP_EOL;
+    if ($array_one != array_filter($array_one)) {
+      echo 'array_one has empty elements' . PHP_EOL;
+    } else {
+      echo 'array_one has values for all elements' . PHP_EOL;
+    }
+    if ($array_two != array_filter($array_two)) {
+      echo 'array_two has empty elements' . PHP_EOL;
+    } else {
+      echo 'array_two has values for all elements' . PHP_EOL;
+    }
+    echo ' -->' . PHP_EOL;
+  ?>
   <div id="main">
     <h1>Cookies!</h1>
 
