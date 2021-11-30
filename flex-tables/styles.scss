@@ -1,0 +1,149 @@
+$element-spacers: (
+  "0": 0,
+  "2": 0.125rem,
+  "4": 0.25rem,
+  "8": 0.5rem,
+  "12": 0.75rem,
+  "16": 1rem,
+  "20": 1.25rem,
+  "24": 1.5rem,
+  "32": 2rem,
+  "40": 2.5rem,
+  "48": 3rem
+);
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1440px,
+  "xxl": 1920px
+);
+
+// breakpoints
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Not a valid breakpoint: Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+
+body {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+#main-container-1 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#main-container-2 {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+h2 {
+  margin: 0 0 1rem 0;
+}
+
+p, hr {
+  margin: 0 0 2rem 0;
+}
+
+.curia-content {
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 1em;
+  }
+
+  ul, ol {
+    line-height: 1.75;
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: map-get($element-spacers, "8");
+    }
+  }
+
+  .curia-table {
+    thead th {
+      font-size: 0.75rem;
+      letter-spacing: 0.55px;
+      text-transform: uppercase;
+    }
+  }
+
+  // .curia-table {
+  //   display: flex;
+  //   flex-flow: row wrap;
+  //   padding: map-get($element-spacers, "48") 0;
+  //   width: 100%;
+
+  //   &__heading {
+  //     font-size: 0.75rem;
+  //     letter-spacing: 0.55px;
+  //     text-transform: uppercase;
+  //   }
+
+  //   &__cell {
+  //     box-sizing: border-box;
+  //     display: inline;
+  //     flex-grow: 1;
+  //     width: 100%;
+  //     padding: 0 map-get($element-spacers, "16");
+  //     overflow: hidden;
+  //   }
+
+  //   @include respond-to("lg") {
+  //     &--two-cols > {
+  //       .curia-table__cell {
+  //         width: 50%;
+  //       }
+  //     }
+
+  //     &--three-cols > {
+  //       .curia-table__cell {
+  //         width: 33.33%;
+  //       }
+  //     }
+
+  //     &--four-cols > {
+  //       .curia-table__cell {
+  //         width: 25%;
+  //       }
+  //     }
+
+  //     &--five-cols > {
+  //       .curia-table__cell {
+  //         width: 20%;
+  //       }
+  //     }
+
+  //     &--six-cols > {
+  //       .curia-table__cell {
+  //         width: 16.6%;
+  //       }
+  //     }
+  //   }
+  // }
+}

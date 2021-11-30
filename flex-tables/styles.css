@@ -1,0 +1,54 @@
+body {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+#main-container-1 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#main-container-2 {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+h2 {
+  margin: 0 0 1rem 0;
+}
+
+p, hr {
+  margin: 0 0 2rem 0;
+}
+
+.curia-content img {
+  height: auto;
+  max-width: 100%;
+}
+.curia-content h1,
+.curia-content h2,
+.curia-content h3,
+.curia-content h4 {
+  margin-bottom: 1em;
+}
+.curia-content ul, .curia-content ol {
+  line-height: 1.75;
+  padding-left: 1.5rem;
+}
+.curia-content ul li, .curia-content ol li {
+  margin-bottom: 0.5rem;
+}
+.curia-content .curia-table thead th {
+  font-size: 0.75rem;
+  letter-spacing: 0.55px;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=styles.css.map */

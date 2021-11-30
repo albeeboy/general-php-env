@@ -103,6 +103,7 @@
           <li><a href="./breadcrumb-fun">Fun with breadcrumbs</a></li>
           <li><a href="./cookies">The great cookie adventure</a></li>
           <li><a href="./json-parsing">Fun with JSON</a></li>
+          <li><a href="./flex-tables">Flexbox responsive tables</a></li>
         </div>
       </div>
     </ul>
