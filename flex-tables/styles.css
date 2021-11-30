@@ -50,5 +50,41 @@ p, hr {
   letter-spacing: 0.55px;
   text-transform: uppercase;
 }
+.curia-content .curia-flex-table {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 3rem 0;
+  width: 100%;
+}
+.curia-content .curia-flex-table__heading {
+  font-size: 0.75rem;
+  letter-spacing: 0.55px;
+  text-transform: uppercase;
+}
+.curia-content .curia-flex-table__cell {
+  box-sizing: border-box;
+  display: inline;
+  flex-grow: 1;
+  width: 100%;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+@media (min-width: 1024px) {
+  .curia-content .curia-flex-table--two-cols > .curia-table__cell {
+    width: 50%;
+  }
+  .curia-content .curia-flex-table--three-cols > .curia-table__cell {
+    width: 33.33%;
+  }
+  .curia-content .curia-flex-table--four-cols > .curia-table__cell {
+    width: 25%;
+  }
+  .curia-content .curia-flex-table--five-cols > .curia-table__cell {
+    width: 20%;
+  }
+  .curia-content .curia-flex-table--six-cols > .curia-table__cell {
+    width: 16.6%;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

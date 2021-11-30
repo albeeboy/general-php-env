@@ -93,57 +93,57 @@ p, hr {
     }
   }
 
-  // .curia-table {
-  //   display: flex;
-  //   flex-flow: row wrap;
-  //   padding: map-get($element-spacers, "48") 0;
-  //   width: 100%;
+  .curia-flex-table {
+    display: flex;
+    flex-flow: row wrap;
+    padding: map-get($element-spacers, "48") 0;
+    width: 100%;
 
-  //   &__heading {
-  //     font-size: 0.75rem;
-  //     letter-spacing: 0.55px;
-  //     text-transform: uppercase;
-  //   }
+    &__heading {
+      font-size: 0.75rem;
+      letter-spacing: 0.55px;
+      text-transform: uppercase;
+    }
 
-  //   &__cell {
-  //     box-sizing: border-box;
-  //     display: inline;
-  //     flex-grow: 1;
-  //     width: 100%;
-  //     padding: 0 map-get($element-spacers, "16");
-  //     overflow: hidden;
-  //   }
+    &__cell {
+      box-sizing: border-box;
+      display: inline;
+      flex-grow: 1;
+      width: 100%;
+      padding: 0 map-get($element-spacers, "16");
+      overflow: hidden;
+    }
 
-  //   @include respond-to("lg") {
-  //     &--two-cols > {
-  //       .curia-table__cell {
-  //         width: 50%;
-  //       }
-  //     }
+    @include respond-to("lg") {
+      &--two-cols > {
+        .curia-table__cell {
+          width: 50%;
+        }
+      }
 
-  //     &--three-cols > {
-  //       .curia-table__cell {
-  //         width: 33.33%;
-  //       }
-  //     }
+      &--three-cols > {
+        .curia-table__cell {
+          width: 33.33%;
+        }
+      }
 
-  //     &--four-cols > {
-  //       .curia-table__cell {
-  //         width: 25%;
-  //       }
-  //     }
+      &--four-cols > {
+        .curia-table__cell {
+          width: 25%;
+        }
+      }
 
-  //     &--five-cols > {
-  //       .curia-table__cell {
-  //         width: 20%;
-  //       }
-  //     }
+      &--five-cols > {
+        .curia-table__cell {
+          width: 20%;
+        }
+      }
 
-  //     &--six-cols > {
-  //       .curia-table__cell {
-  //         width: 16.6%;
-  //       }
-  //     }
-  //   }
-  // }
+      &--six-cols > {
+        .curia-table__cell {
+          width: 16.6%;
+        }
+      }
+    }
+  }
 }
