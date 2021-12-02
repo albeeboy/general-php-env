@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Breadcrumb Parsing Fun!</title>
+  <title>JSON Parsing Fun!</title>
   <style>
     body {
       font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
