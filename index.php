@@ -104,6 +104,7 @@
           <li><a href="./cookies">The great cookie adventure</a></li>
           <li><a href="./json-parsing">Fun with JSON</a></li>
           <li><a href="./flex-tables">Flexbox responsive tables</a></li>
+          <li><a href="./arrays">Fun with arrays</a></li>
         </div>
       </div>
     </ul>

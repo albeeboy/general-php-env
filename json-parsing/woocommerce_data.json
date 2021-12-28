@@ -1,139 +1,156 @@
-{
-  "method": "POST",
-  "path": "/",
-  "query": {},
-  "headers": {
-    "x-forwarded-for": "74.71.179.145",
-    "x-forwarded-proto": "https",
-    "x-forwarded-port": "443",
-    "host": "8446c1baeab149e127faa267c4c3b64a.m.pipedream.net",
-    "x-amzn-trace-id": "Root=1-6182ef97-5016f2624a98ee602cd4c913",
-    "content-length": "2026",
-    "user-agent": "WooCommerce/5.7.0 Hookshot (WordPress/5.8)",
-    "accept": "*/*",
-    "accept-encoding": "deflate, gzip",
-    "referer": "https://8446c1baeab149e127faa267c4c3b64a.m.pipedream.net/",
-    "content-type": "application/json",
-    "x-wc-webhook-source": "https://curia.local:8890/",
-    "x-wc-webhook-topic": "order.created",
-    "x-wc-webhook-resource": "order",
-    "x-wc-webhook-event": "created",
-    "x-wc-webhook-signature": "90ZExiaieU7jW0cKKlS9qvcTAbAaK0D/jFMe4hZvZio=",
-    "x-wc-webhook-id": "1",
-    "x-wc-webhook-delivery-id": "1be49c9d1836ab4e4e13146b784d0c16"
-  },
-  "bodyRaw": "{\"id\":1682,\"parent_id\":0,\"status\":\"processing\",\"currency\":\"USD\",\"version\":\"5.7.0\",\"prices_include_tax\":false,\"date_created\":\"2021-11-03T20:22:30\",\"date_modified\":\"2021-11-03T20:22:31\",\"discount_total\":\"0.00\",\"discount_tax\":\"0.00\",\"shipping_total\":\"0.00\",\"shipping_tax\":\"0.00\",\"cart_tax\":\"0.00\",\"total\":\"0.00\",\"total_tax\":\"0.00\",\"customer_id\":1,\"order_key\":\"wc_order_nYxB0f2VgnlOn\",\"billing\":{\"first_name\":\"Roe\",\"last_name\":\"Jogan\",\"company\":\"Toxic Ideas Ltd.\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"email\":\"rjogan@toxic.net\",\"phone\":\"212-555-5555\"},\"shipping\":{\"first_name\":\"\",\"last_name\":\"\",\"company\":\"\",\"address_1\":\"\",\"address_2\":\"\",\"city\":\"\",\"state\":\"\",\"postcode\":\"\",\"country\":\"\",\"phone\":\"\"},\"payment_method\":\"\",\"payment_method_title\":\"\",\"transaction_id\":\"\",\"customer_ip_address\":\"::1\",\"customer_user_agent\":\"Mozilla\\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/94.0.4606.81 Safari\\/537.36\",\"created_via\":\"checkout\",\"customer_note\":\"\",\"date_completed\":null,\"date_paid\":\"2021-11-03T20:22:31\",\"cart_hash\":\"e46370ca6d0716daf77f7418269ecbcb\",\"number\":\"1682\",\"meta_data\":[{\"id\":29924,\"key\":\"is_vat_exempt\",\"value\":\"no\"},{\"id\":29931,\"key\":\"_new_order_email_sent\",\"value\":\"true\"}],\"line_items\":[{\"id\":1,\"name\":\"Aqueous Solubility, Shake Flask\",\"product_id\":1637,\"variation_id\":0,\"quantity\":1,\"tax_class\":\"\",\"subtotal\":\"0.00\",\"subtotal_tax\":\"0.00\",\"total\":\"0.00\",\"total_tax\":\"0.00\",\"taxes\":[],\"meta_data\":[],\"sku\":\"\",\"price\":0,\"parent_name\":null}],\"tax_lines\":[],\"shipping_lines\":[],\"fee_lines\":[],\"coupon_lines\":[],\"refunds\":[],\"date_created_gmt\":\"2021-11-03T20:22:30\",\"date_modified_gmt\":\"2021-11-03T20:22:31\",\"date_completed_gmt\":null,\"date_paid_gmt\":\"2021-11-03T20:22:31\",\"currency_symbol\":\"$\",\"_links\":{\"self\":[{\"href\":\"https:\\/\\/curia.local:8890\\/wp-json\\/wc\\/v3\\/orders\\/1682\"}],\"collection\":[{\"href\":\"https:\\/\\/curia.local:8890\\/wp-json\\/wc\\/v3\\/orders\"}],\"customer\":[{\"href\":\"https:\\/\\/curia.local:8890\\/wp-json\\/wc\\/v3\\/customers\\/1\"}]}}",
-  "body": {
-    "id": 1682,
-    "parent_id": 0,
-    "status": "processing",
-    "currency": "USD",
-    "version": "5.7.0",
-    "prices_include_tax": false,
-    "date_created": "2021-11-03T20:22:30",
-    "date_modified": "2021-11-03T20:22:31",
-    "discount_total": "0.00",
-    "discount_tax": "0.00",
-    "shipping_total": "0.00",
-    "shipping_tax": "0.00",
-    "cart_tax": "0.00",
-    "total": "0.00",
-    "total_tax": "0.00",
-    "customer_id": 1,
-    "order_key": "wc_order_nYxB0f2VgnlOn",
-    "billing": {
-      "first_name": "Roe",
-      "last_name": "Jogan",
-      "company": "Toxic Ideas Ltd.",
-      "address_1": "",
-      "address_2": "",
-      "city": "",
-      "state": "",
-      "postcode": "",
-      "country": "",
-      "email": "rjogan@toxic.net",
-      "phone": "212-555-5555"
-    },
-    "shipping": {
-      "first_name": "",
-      "last_name": "",
-      "company": "",
-      "address_1": "",
-      "address_2": "",
-      "city": "",
-      "state": "",
-      "postcode": "",
-      "country": "",
-      "phone": ""
-    },
-    "payment_method": "",
-    "payment_method_title": "",
-    "transaction_id": "",
-    "customer_ip_address": "::1",
-    "customer_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36",
-    "created_via": "checkout",
-    "customer_note": "",
-    "date_completed": null,
-    "date_paid": "2021-11-03T20:22:31",
-    "cart_hash": "e46370ca6d0716daf77f7418269ecbcb",
-    "number": "1682",
-    "meta_data": [
-      {
-        "id": 29924,
-        "key": "is_vat_exempt",
-        "value": "no"
+[
+  {
+      "id": 1730,
+      "parent_id": 0,
+      "status": "processing",
+      "currency": "USD",
+      "version": "5.9.0",
+      "prices_include_tax": false,
+      "date_created": "2021-12-03T00:37:28",
+      "date_modified": "2021-12-03T00:37:28",
+      "discount_total": "0.00",
+      "discount_tax": "0.00",
+      "shipping_total": "0.00",
+      "shipping_tax": "0.00",
+      "cart_tax": "0.00",
+      "total": "0.00",
+      "total_tax": "0.00",
+      "customer_id": 1,
+      "order_key": "wc_order_y63f0BUcISWNh",
+      "billing": {
+          "first_name": "Salvor",
+          "last_name": "Hardin",
+          "company": "Terminus Outfitters Inc.",
+          "address_1": "",
+          "address_2": "",
+          "city": "",
+          "state": "",
+          "postcode": "",
+          "country": "",
+          "email": "shardin@nullfield.computer",
+          "phone": "777-555-5432"
       },
-      {
-        "id": 29931,
-        "key": "_new_order_email_sent",
-        "value": "true"
-      }
-    ],
-    "line_items": [
-      {
-        "id": 1,
-        "name": "Aqueous Solubility, Shake Flask",
-        "product_id": 1637,
-        "variation_id": 0,
-        "quantity": 1,
-        "tax_class": "",
-        "subtotal": "0.00",
-        "subtotal_tax": "0.00",
-        "total": "0.00",
-        "total_tax": "0.00",
-        "taxes": [],
-        "meta_data": [],
-        "sku": "",
-        "price": 0,
-        "parent_name": null
-      }
-    ],
-    "tax_lines": [],
-    "shipping_lines": [],
-    "fee_lines": [],
-    "coupon_lines": [],
-    "refunds": [],
-    "date_created_gmt": "2021-11-03T20:22:30",
-    "date_modified_gmt": "2021-11-03T20:22:31",
-    "date_completed_gmt": null,
-    "date_paid_gmt": "2021-11-03T20:22:31",
-    "currency_symbol": "$",
-    "_links": {
-      "self": [
-        {
-          "href": "https://curia.local:8890/wp-json/wc/v3/orders/1682"
-        }
+      "shipping": {
+          "first_name": "",
+          "last_name": "",
+          "company": "",
+          "address_1": "",
+          "address_2": "",
+          "city": "",
+          "state": "",
+          "postcode": "",
+          "country": "",
+          "phone": ""
+      },
+      "payment_method": "",
+      "payment_method_title": "",
+      "transaction_id": "",
+      "customer_ip_address": "::1",
+      "customer_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36",
+      "created_via": "checkout",
+      "customer_note": "",
+      "date_completed": null,
+      "date_paid": "2021-12-03T00:37:28",
+      "cart_hash": "94a175a3ca14ccbd2b9428d4a7fc32fe",
+      "number": "1730",
+      "meta_data": [
+          {
+              "id": 30855,
+              "key": "is_vat_exempt",
+              "value": "no"
+          },
+          {
+              "id": 30856,
+              "key": "munchkin_code",
+              "value": "id:882-OIU-683&token:_mch-curia.local-1630613188812-30432"
+          },
+          {
+              "id": 30863,
+              "key": "_new_order_email_sent",
+              "value": "true"
+          }
       ],
-      "collection": [
-        {
-          "href": "https://curia.local:8890/wp-json/wc/v3/orders"
-        }
+      "line_items": [
+          {
+              "id": 13,
+              "name": "Aqueous Solubility, Shake Flask",
+              "product_id": 1637,
+              "variation_id": 0,
+              "quantity": 1,
+              "tax_class": "",
+              "subtotal": "0.00",
+              "subtotal_tax": "0.00",
+              "total": "0.00",
+              "total_tax": "0.00",
+              "taxes": [],
+              "meta_data": [
+                  {
+                      "id": 168,
+                      "key": "PBS Buffer pH 7.4",
+                      "value": "1",
+                      "display_key": "PBS Buffer pH 7.4",
+                      "display_value": "1"
+                  },
+                  {
+                      "id": 169,
+                      "key": "Saline",
+                      "value": "1",
+                      "display_key": "Saline",
+                      "display_value": "1"
+                  },
+                  {
+                      "id": 170,
+                      "key": "Simulated Gastric Fluid (SGF)",
+                      "value": "1",
+                      "display_key": "Simulated Gastric Fluid (SGF)",
+                      "display_value": "1"
+                  },
+                  {
+                      "id": 171,
+                      "key": "Simulated Intestinal Fluid (SIF)",
+                      "value": "1",
+                      "display_key": "Simulated Intestinal Fluid (SIF)",
+                      "display_value": "1"
+                  },
+                  {
+                      "id": 172,
+                      "key": "Other",
+                      "value": "1",
+                      "display_key": "Other",
+                      "display_value": "1"
+                  }
+              ],
+              "sku": "",
+              "price": 0,
+              "parent_name": null
+          }
       ],
-      "customer": [
-        {
-          "href": "https://curia.local:8890/wp-json/wc/v3/customers/1"
-        }
-      ]
-    }
+      "tax_lines": [],
+      "shipping_lines": [],
+      "fee_lines": [],
+      "coupon_lines": [],
+      "refunds": [],
+      "date_created_gmt": "2021-12-03T00:37:28",
+      "date_modified_gmt": "2021-12-03T00:37:28",
+      "date_completed_gmt": null,
+      "date_paid_gmt": "2021-12-03T00:37:28",
+      "currency_symbol": "$",
+      "_links": {
+          "self": [
+              {
+                  "href": "https://curia.local:8890/wp-json/wc/v3/orders/1730"
+              }
+          ],
+          "collection": [
+              {
+                  "href": "https://curia.local:8890/wp-json/wc/v3/orders"
+              }
+          ],
+          "customer": [
+              {
+                  "href": "https://curia.local:8890/wp-json/wc/v3/customers/1"
+              }
+          ]
+      }
   }
-}
+]
