@@ -13,7 +13,7 @@
       padding: 0;
       background-color: #ddd;
     }
-    #container {
+    #container, #js-container {
       box-sizing: border-box;
       position: relative;
       width: calc(100% - 6rem);
@@ -30,6 +30,11 @@
     }
     p, hr {
       margin: 0 0 2rem 0;
+    }
+    .section-title {
+      font-family: monospace;
+      font-size: 2.5rem;
+      color: #777;
     }
     .convert-button {
       position: relative;
@@ -66,6 +71,8 @@
     $title_2 = '<code>$tz_obj</code>';
     $title_3 = '<code>$dst_active: $time_zone_offset</code>';
     ?>
+    <h2 class="section-title">PHP examples</h2>
+    <hr>
     <h2><?=$title_1;?></h2>
     <div>
       <pre><?php print_r($date_obj); ?></pre>
@@ -78,10 +85,21 @@
     <hr>
     <h2><?=$title_3;?></h2>
     <div>
-      <p><?=$dst_active . ': ' . $time_zone_offset;?></p>
+      <pre><?=$dst_active . ': ' . $time_zone_offset;?></pre>
     </div>
     
   </div>
-  <script></script>
+
+  <div id="js-container">
+    <h2 class="section-title">JavaScript examples</h2>
+    <hr>
+    <h2><code>this year</code></h2>
+    <pre class="this-year">2019</pre>
+  </div>
+  <script>
+    const thisYear = new Date().getFullYear();
+    const yearEl = document.querySelector(".this-year");
+    yearEl.innerText = thisYear;
+  </script>
 </body>
 </html>
