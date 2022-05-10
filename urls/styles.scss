@@ -1,0 +1,49 @@
+body {
+  background-color: #ddd;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #111;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 0 1.5rem 0;
+}
+
+h2 {
+  color: slateblue;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 600;
+  margin: 0;
+}
+
+section {
+  box-sizing: border-box;
+  padding: 2rem;
+  width: 100%;
+}
+
+#main-container {
+  background-color: #fff;
+  box-sizing: border-box;
+  margin: 2rem auto;
+  padding: 2rem;
+  position: relative;
+  width: 80%;
+}
+
+.url-render {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 0 0 2rem 0;
+}

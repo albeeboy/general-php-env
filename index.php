@@ -105,6 +105,7 @@
           <li><a href="./json-parsing">Fun with JSON</a></li>
           <li><a href="./flex-tables">Flexbox responsive tables</a></li>
           <li><a href="./arrays">Fun with arrays</a></li>
+          <li><a href="./urls">Fun with URL parsing</a></li>
         </div>
       </div>
     </ul>
