@@ -13,8 +13,19 @@
 </head>
 <body>
   <div id="main-container">
-    <section class="url-rendering">
-      <h1>URL parts</h1>
+    <section class="section-output url-js-output">
+      <h1>URL parts (JS)</h1>
+    </section>
+    <section class="section-output url-php-output">
+      <h1>URL parts (PHP)</h1>
+      <?php
+        // cf. https://www.php.net/manual/en/function.parse-url.php
+        $parsed = parse_url('https://www.codeelement.com/business/web/fees/developer/?id=3&level=1&name=Lois%20Lane');
+        foreach ($parsed as $key => $value) : ?>
+          <h2>PHP_URL_<?=strtoupper($key);?></h2>
+          <p class="url-output <?='url-' . $key;?>"><?=$value;?></p>
+        <?php endforeach;
+      ?>
     </section>
   </div>
   
@@ -26,12 +37,12 @@
   const urlParts = ["href", "origin", "protocol", "username", "password", "host", "hostname", "port", "pathname", "path", "search", "hash"];
 
   urlParts.forEach((part) => {
-    const elContainer = document.querySelector(".url-rendering");
+    const elContainer = document.querySelector(".url-js-output");
     const elH = document.createElement("h2");
     const elP = document.createElement("p");
     const hTxt = document.createTextNode("URL." + part);
     const pTxt =  document.createTextNode(url[part]);
-    elP.classList.add("url-render", part + "-render");
+    elP.classList.add("url-output", part + "-output");
     elH.appendChild(hTxt);
     elP.appendChild(pTxt);
     elContainer.appendChild(elH);
