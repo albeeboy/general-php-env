@@ -106,6 +106,8 @@
           <li><a href="./flex-tables">Flexbox responsive tables</a></li>
           <li><a href="./arrays">Fun with arrays</a></li>
           <li><a href="./urls">Fun with URL parsing</a></li>
+          <li><a href="./php-tests/test_1.php">PHP Test 1</a></li>
+          <li><a href="./database-fun/index.php">Database Fun</a></li>
         </div>
       </div>
     </ul>
