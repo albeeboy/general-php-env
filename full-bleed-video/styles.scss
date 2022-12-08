@@ -1,0 +1,62 @@
+// color palette
+$white: #fff;
+$black: #000;
+$light-olive: #b7b7a4;
+$text-black: #121212;
+
+body {
+  background-color: $white;
+  box-sizing: border-box;
+  color: $text-black;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 1rem;
+    style: normal;
+    weight: 300;
+  }
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+}
+
+nav {
+  align-items: center;
+  box-sizing: border-box;
+  background-color: $black;
+  display: flex;
+  height: 6.6875rem;
+  left: 0;
+  padding: 1.25rem 3rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1024;
+}
+
+#nav-header {
+  color: $white;
+  margin: 0 auto;
+  max-width: 100rem;
+  position: relative;
+  width: 100%;
+}
+
+#main {
+  position: relative;
+  top: 6.6875rem;
+}
+
+#hero-video-container {
+  height: auto;
+  margin: 2.25rem 0;
+  position: relative;
+  width: 100%;
+}
+
+.hero-video {
+  position: relative;
+  width: 100%;
+}

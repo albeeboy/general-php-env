@@ -108,6 +108,7 @@
           <li><a href="./urls">Fun with URL parsing</a></li>
           <li><a href="./php-tests/test_1.php">PHP Test 1</a></li>
           <li><a href="./database-fun/index.php">Database Fun</a></li>
+          <li><a href="./full-bleed-video/index.php">Full Bleed Video with Autoplay</a></li>
         </div>
       </div>
     </ul>

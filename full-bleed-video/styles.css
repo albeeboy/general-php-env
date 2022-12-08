@@ -1,0 +1,56 @@
+body {
+  background-color: #fff;
+  box-sizing: border-box;
+  color: #121212;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+}
+
+nav {
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #000;
+  display: flex;
+  height: 6.6875rem;
+  left: 0;
+  padding: 1.25rem 3rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1024;
+}
+
+#nav-header {
+  color: #fff;
+  margin: 0 auto;
+  max-width: 100rem;
+  position: relative;
+  width: 100%;
+}
+
+#main {
+  position: relative;
+  top: 6.6875rem;
+}
+
+#hero-video-container {
+  height: auto;
+  margin: 2.25rem 0;
+  position: relative;
+  width: 100%;
+}
+
+.hero-video {
+  position: relative;
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */
