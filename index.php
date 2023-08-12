@@ -109,6 +109,7 @@
           <li><a href="./php-tests/test_1.php">PHP Test 1</a></li>
           <li><a href="./database-fun/index.php">Database Fun</a></li>
           <li><a href="./full-bleed-video/index.php">Full Bleed Video with Autoplay</a></li>
+          <li><a href="./neu-founders-layouts/home.php">NEU Founders home</a></li>
         </div>
       </div>
     </ul>

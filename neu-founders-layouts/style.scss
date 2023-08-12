@@ -1,0 +1,27 @@
+// use rules
+@use "functions" as *;
+@use "variables" as var;
+@forward "flex";
+
+// general declarations
+body {
+  color: color("secondary");
+  font: {
+    family: "Nunito Sans", sans-serif;
+    weight: 400;
+    size: 1rem;
+    style: normal;
+  }
+  margin: 0;
+  padding: 0;
+}
+
+// header
+.header {
+  height: 105px;
+  width: 100%;
+}
+
+.header-logo {
+  height: 3.9412rem;
+}
