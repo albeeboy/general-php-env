@@ -1,9 +1,22 @@
-// use rules
+// use
 @use "functions" as *;
+@use "mixins" as m;
 @use "variables" as var;
+// forward
 @forward "flex";
+@forward "colors";
+@forward "typography";
+@forward "button";
+@forward "nav";
+@forward "hero";
 
 // general declarations
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
   color: color("secondary");
   font: {
@@ -16,12 +29,59 @@ body {
   padding: 0;
 }
 
+// utility
+.sitewidth {
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 36px;
+  width: 100%;
+  max-width: var.$max-sitewidth;
+}
 // header
 .header {
+  background-color: color("white");
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  position: fixed;
   height: 105px;
   width: 100%;
+  z-index: 1000;
+
+  @include m.respond-to("md") {
+    height: 120px;
+  }
 }
 
 .header-logo {
   height: 3.9412rem;
+}
+
+.main-nav-container {
+  height: 100%;
+}
+
+.neu-menu {
+  list-style: none;
+
+  li {
+    display: inline-block;
+    padding-right: 28px;
+  }
+
+  a {
+    color: color("secondary");
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    letter-spacing: 1.6px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color var.$hover-transition-timing linear;
+
+    &:hover {
+      color: color("primary");
+    }
+  }
+}
+
+.menu-button-wrapper {
+  padding-left: 13px;
 }

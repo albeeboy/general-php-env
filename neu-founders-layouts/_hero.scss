@@ -1,0 +1,139 @@
+@use "variables" as var;
+@use "mixins" as m;
+@use "functions" as *;
+
+.hero {
+  background: center top -120px / 280% no-repeat url("./images/#{var.$homepage-hero-img}");
+  display: block;
+  height: calc(100vh - 105px);
+  position: relative;
+  top: 105px;
+
+  &--with-title-and-cta {
+    overflow: hidden;
+  }
+
+  @include m.respond-to("xs") {
+    background: center top -90px / 280% no-repeat url("./images/#{var.$homepage-hero-img}");
+  }
+
+  @include m.respond-to("md") {
+    background: left -40px center / 160% no-repeat url("./images/#{var.$homepage-hero-img}");
+    top: 120px;
+    height: 600px;
+  }
+
+  @include m.respond-to("lg") {
+    background: left center / 125% no-repeat
+      url("./images/#{var.$homepage-hero-img}");
+  }
+}
+
+.hero-circle {
+  position: absolute;
+
+  &--mobile {
+    top: 225px;
+    display: block;
+    left: -20%;
+    margin: 0 auto;
+    width: 140%;
+
+    @include m.respond-to("xs") {
+      top: 369px;
+    }
+
+    @include m.respond-to("md") {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    bottom: 0;
+    display: none;
+    height: 900px;
+    left: calc(-120px + (100vw - 1600px) * 0.4);
+    margin: auto 0;
+    opacity: 0.8;
+    right: 0;
+    top: 0;
+    width: 900px;
+
+    @include m.respond-to("md") {
+      display: block;
+    }
+
+    @include m.respond-to("lg") {
+      left: calc(-120px + (100vw - 1600px) * 0.5);
+    }
+
+    @include m.respond-to("xl") {
+      left: -120px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.hero--with-title-and-cta {
+  .hero-content-container {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+
+    @include m.respond-to("md") {
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .row {
+      bottom: 50px;
+      position: absolute;
+
+      @include m.respond-to("md") {
+        bottom: auto;
+        position: relative;
+      }
+    }
+
+    .heading.h1 {
+      color: color("white");
+      margin: 0 auto 1rem;
+      text-align: center;
+
+      @include m.respond-to("md") {
+        margin: 0 0 1rem 0;
+        text-align: left;
+      }
+    }
+
+    .heading.h4 {
+      color: color("white");
+      margin: 0 auto 1rem;
+      text-align: center;
+
+      @include m.respond-to("md") {
+        margin: 0 0 1rem 0;
+        text-align: left;
+      }
+    }
+
+    .button-wrapper {
+      position: relative;
+
+      .button {
+        margin: 0 auto;
+
+        @include m.respond-to("md") {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

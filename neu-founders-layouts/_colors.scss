@@ -1,0 +1,19 @@
+@use "functions" as *;
+@use "variables" as var;
+
+// color classes
+.color {
+  @each $name, $color in var.$palette {
+    &--#{$name} {
+      color: $color;
+    }
+  }
+}
+
+.bgcolor {
+  @each $name, $color in var.$palette {
+    &--#{$name} {
+      background-color: $color;
+    }
+  }
+}

@@ -9,3 +9,21 @@ $palette: (
   "grey-3": #b9b9b9,
   "grey-4": #6a6a6a,
 );
+
+$breakpoints: (
+  "xs": 380px,
+  "sm": 480px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1440px,
+);
+
+$max-sitewidth: 1318px;
+$button-border-radius: 28px;
+
+// animation timing
+$button-transition-timing: 0.333s;
+$hover-transition-timing: 0.333s;
+
+// site specific variables
+$homepage-hero-img: "fo-hero-image@2x.png";

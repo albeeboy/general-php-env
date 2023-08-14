@@ -1,0 +1,13 @@
+// use
+@use "variables" as var;
+
+// breakpoints
+@mixin respond-to($bpt) {
+  @if map-has-key(var.$breakpoints, $bpt) {
+    @media (min-width: map-get(var.$breakpoints, $bpt)) {
+      @content;
+    }
+  } @else {
+    @warn "Not a valid breakpoint: Available breakpoints are: #{map-keys(var.$breakpoints)}.";
+  }
+}

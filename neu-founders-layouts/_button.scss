@@ -1,0 +1,67 @@
+// use
+@use "variables" as var;
+@use "functions" as *;
+
+.button {
+  align-items: center;
+  border-radius: 28px;
+  display: flex;
+  flex-flow: row nowrap;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  height: 53px;
+  justify-content: center;
+  letter-spacing: 1.6px;
+  max-width: fit-content;
+  padding: 0 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &--primary {
+    background-color: color("primary");
+    border: solid 2px color("primary");
+    color: color("white");
+    transition: all var.$button-transition-timing linear;
+
+    &:hover {
+      background-color: color("white");
+      color: color("primary");
+    }
+  }
+
+  &--primary.is-color-secondary {
+    background-color: color("secondary");
+    border: solid 2px color("secondary");
+    color: color("white");
+    transition: all var.$button-transition-timing linear;
+
+    &:hover {
+      background-color: color("white");
+      color: color("secondary");
+    }
+  }
+
+  &--secondary {
+    background-color: color("white");
+    border: solid 2px color("primary");
+    color: color("primary");
+    transition: all var.$button-transition-timing linear;
+
+    &:hover {
+      background-color: color("primary");
+      color: color("white");
+    }
+  }
+
+  &--secondary.is-color-secondary {
+    background-color: color("white");
+    border: solid 2px color("secondary");
+    color: color("secondary");
+    transition: all var.$button-transition-timing linear;
+
+    &:hover {
+      background-color: color("secondary");
+      color: color("white");
+    }
+  }
+}
